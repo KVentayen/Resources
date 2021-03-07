@@ -1,0 +1,75 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+
+\title{Math Notes}
+\author{K}
+\date{March 6, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+\begin{document}
+\maketitle
+\tableofcontents{}
+\pagebreak
+
+\section{Right Triangle Properites}
+\subsection{Pythagorean Theorem}
+\begin{equation*}
+  a^2 + b^2 = c^2
+\end{equation*}
+
+\subsection{Quadratic Formula}
+\begin{equation*}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation*}
+
+\subsection{Trigonometric Functions}
+\begin{align*}
+  sin(\theta) &= \frac{Opposite}{Hypotenuse}&
+    cos(\theta) &= \frac{Adjacent}{Hypotenuse}&
+    tan(\theta) &= \frac{Opposite}{Adjacent}\\
+  &= \frac{y}{1} = y&
+    &= \frac{x}{1} = x&
+    &= \frac{y}{x}\\
+  &&
+    &&
+    &= \frac{sin(\theta)}{cos(\theta)}\\
+    \\
+  sec(\theta) &= \frac{1}{sin(\theta)}&
+    csc(\theta) &= \frac{1}{cos(\theta)}&
+    cot(\theta) &= \frac{cos(\theta)}{sin(\theta)}
+\end{align*}
+
+\section{1 Dimensional Motion}
+\begin{align*}
+  v_f &= v + at\\
+  s_f &= s_i v_i t + \frac{1}{2} a t^2
+\end{align*}
+
+\subsection{Kinematic Equations}
+\begin{align*}
+  v &= v_0 +at\\
+  \Delta x &= \left( \frac{v+v_0}{2} \right)\\
+  \Delta x &= v_0 t + \frac{1}{2} a t^2\\
+  v^2 &= v_0^2 + 2a\Delta x
+\end{align*}
+
+\end{document}
