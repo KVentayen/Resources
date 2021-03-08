@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  6 MAR 2021 18:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  6 MAR 2021 20:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**math121
-(./math121.tex
+**Phys204ANotes
+(./Phys204ANotes.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-12-07> xparse <2020-03-03>
 (c:/LaTeX/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -422,26 +422,26 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count294
 \l__pdf_internal_box=\box99
 )
-(./math121.aux)
-\openout1 = `math121.aux'.
+(./Phys204ANotes.aux)
+\openout1 = `Phys204ANotes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-Package hyperref Info: Link coloring ON on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+Package hyperref Info: Link coloring ON on input line 28.
 
 (c:/LaTeX/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -454,12 +454,12 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count295
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
- (./math121.out) (./math121.out)
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
+ (./Phys204ANotes.out) (./Phys204ANotes.out)
 \@outlinefile=\write4
-\openout4 = `math121.out'.
+\openout4 = `Phys204ANotes.out'.
 
 \c@lstlisting=\count296
 
@@ -476,74 +476,49 @@ LaTeX Info: Redefining \nameref on input line 30.
 \MPnumerator=\count301
 \makeMPintoPDFobject=\count302
 \everyMPtoPDFconversion=\toks28
-) Excluding 'comment' comment.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
 
-
-(c:/LaTeX/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (c:/LaTeX/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
 
 
 (c:/LaTeX/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./math121.toc)
+)
+(./Phys204ANotes.toc)
 \tf@toc=\write5
-\openout5 = `math121.toc'.
+\openout5 = `Phys204ANotes.toc'.
 
+ [1
 
-[1
-
-{c:/LaTeX/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package epstopdf Info: Source file: <./assets/unit-circle7_43215.eps>
-(epstopdf)                    date: 2021-03-06 11:05:18
-(epstopdf)                    size: 546867 bytes
-(epstopdf)             Output file: <./assets/unit-circle7_43215-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2021-03-06 11:32:57
-(epstopdf)                    size: 53931 bytes
-(epstopdf)             Command: <repstopdf --outfile=./assets/unit-circle7_4321
-5-eps-converted-to.pdf ./assets/unit-circle7_43215.eps>
-(epstopdf)             \includegraphics on input line 47.
-Package epstopdf Info: Output file is already uptodate.
-<./assets/unit-circle7_43215-eps-converted-to.pdf, id=88, 593.21625pt x 593.216
-25pt>
-File: ./assets/unit-circle7_43215-eps-converted-to.pdf Graphic file (type pdf)
-<use ./assets/unit-circle7_43215-eps-converted-to.pdf>
-Package pdftex.def Info: ./assets/unit-circle7_43215-eps-converted-to.pdf  used
- on input line 47.
-(pdftex.def)             Requested size: 390.0pt x 390.0123pt.
-
-[2 <./Assets/unit-circle7_43215-eps-converted-to.pdf>] [3] [4] [5] [6]
-(./math121.aux)
-Package rerunfilecheck Info: File `math121.out' has not changed.
-(rerunfilecheck)             Checksum: 3055DC5B5720822DCE61B0B481DC4C8B;964.
+{c:/LaTeX/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Ph
+ys204ANotes.aux)
+Package rerunfilecheck Info: File `Phys204ANotes.out' has not changed.
+(rerunfilecheck)             Checksum: C28E347CA814634E9DB8B5BB8B0121E3;389.
  ) 
 Here is how much of TeX's memory you used:
- 8790 strings out of 479382
- 127704 string characters out of 5870331
- 451706 words of memory out of 5000000
- 25712 multiletter control sequences out of 15000+600000
- 412838 words of font info for 64 fonts, out of 8000000 for 9000
+ 8728 strings out of 479382
+ 126831 string characters out of 5870331
+ 445727 words of memory out of 5000000
+ 25680 multiletter control sequences out of 15000+600000
+ 412193 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,15n,72p,267b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,9n,72p,273b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/LaTeX/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
 c:/LaTeX/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/
 LaTeX/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/LaT
-eX/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/LaTeX/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/LaTeX/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/LaTeX/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/LaTeX/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/LaTeX/texlive/2020/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/LaTeX/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/LaTeX/texlive/2020/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy6.pfb><c:/LaTeX/texlive/2020/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on math121.pdf (6 pages, 185342 bytes).
+eX/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/LaTeX/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/LaTeX/texli
+ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/LaTeX/texlive/2
+020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/LaTeX/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Phys204ANotes.pdf (2 pages, 81490 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
