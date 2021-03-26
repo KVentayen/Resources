@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  25 MAR 2021 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  25 MAR 2021 21:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -507,7 +507,7 @@ to.pdf>
 5-eps-converted-to.pdf ./assets/unit-circle7_43215.eps>
 (epstopdf)             \includegraphics on input line 47.
 Package epstopdf Info: Output file is already uptodate.
-<./assets/unit-circle7_43215-eps-converted-to.pdf, id=88, 593.21625pt x 593.216
+<./assets/unit-circle7_43215-eps-converted-to.pdf, id=93, 593.21625pt x 593.216
 25pt>
 File: ./assets/unit-circle7_43215-eps-converted-to.pdf Graphic file (type pdf)
 <use ./assets/unit-circle7_43215-eps-converted-to.pdf>
@@ -520,16 +520,16 @@ Overfull \hbox (16.60252pt too wide) in paragraph at lines 47--49
 part / 43200 / 43215 / unit-[]circle7 _ 43215 .
  []
 
-[2 <./Assets/unit-circle7_43215-eps-converted-to.pdf>] [3] [4] [5] [6]
+[2 <./Assets/unit-circle7_43215-eps-converted-to.pdf>] [3] [4] [5] [6] [7]
 (./math121.aux)
 Package rerunfilecheck Info: File `math121.out' has not changed.
-(rerunfilecheck)             Checksum: 3055DC5B5720822DCE61B0B481DC4C8B;964.
+(rerunfilecheck)             Checksum: 803A8813829CF6BF6CB4DEF11EB2D3CF;1040.
  ) 
 Here is how much of TeX's memory you used:
- 8793 strings out of 479382
- 127734 string characters out of 5870331
- 451706 words of memory out of 5000000
- 25714 multiletter control sequences out of 15000+600000
+ 8796 strings out of 479382
+ 127770 string characters out of 5870331
+ 451707 words of memory out of 5000000
+ 25715 multiletter control sequences out of 15000+600000
  413007 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,15n,72p,267b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -546,10 +546,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/LaTeX/texlive/2020/texmf
 nts/type1/public/amsfonts/cm/cmsy6.pfb><c:/LaTeX/texlive/2020/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb><c:/LaTeX/texlive/2020/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt12.pfb>
-Output written on math121.pdf (6 pages, 191527 bytes).
+Output written on math121.pdf (7 pages, 193265 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 186 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
