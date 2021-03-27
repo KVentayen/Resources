@@ -1,5 +1,5 @@
 \documentclass[12pt, letterpaper]{article}
-\usepackage[legalpaper, portrait, margin=1in]{geometry}
+\usepackage[legalpaper, portrait, margin=1in]{geometry}   %For page Setup
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb, amsmath}               %For Equations and Formulas
 \usepackage{comment}                        %For Commenting
@@ -98,7 +98,7 @@ Source: \url{https://etc.usf.edu/clipart/43200/43215/unit-circle7_43215.htm}
   cos^2\theta &= \frac{1+cos2\theta}{2}&
     sec^2\theta &= \frac{2}{1+cos2\theta}\\
   tan^2\theta &= \frac{1-cos2\theta}{1+cos2\theta}&
-    cot^2\theta &= \frac{1+cos2\theta}{1-cos2\theta}\\
+    cot^2\theta &= \frac{1+cos2\theta}{1-cos2\theta}
 \end{align*}
 
 \section{Trigonometric Substitution}
@@ -107,9 +107,12 @@ Source: \url{https://etc.usf.edu/clipart/43200/43215/unit-circle7_43215.htm}
 Expression & Substitution & Identity\\
 $\sqrt{a^2 - b^2 x^2}$ & $x = \frac{a}{b} sin\theta$ & $1-sin^2 \theta = cos^2 \theta$\\
 $\sqrt{a^2 + b^2 x^2}$ & $x = \frac{a}{b} tan\theta$ & $1-tan^2\theta = sec^2\theta$\\
-$\sqrt{b^2 x^2 - a^2}$ & $x = \frac{a}{b} sec\theta$ & $sec^2\theta - 1 = tan^2 \theta$
+$\sqrt{b^2 x^2 - a^2}$ & $x = \frac{a}{b} sec\theta$ & $sec^2\theta - 1 = tan^2 \theta$\\
+\\
 \end{tabular}
 \end{center}
+
+\begin{multicols}{2}
 
 \section{Table of Basic Derivatives}
 \begin{center}
@@ -154,47 +157,55 @@ $csc(x)$ & $-cot(x) csc(x)$\\
 \end{tabular}
 \end{center}
 
+\columnbreak
+
 \section{Table of Basic Integrals}
 
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-& $f(x)$ & $\int\limits f(x) dx = F(x) + C $\\
+$f(x)$ & $\int\limits f(x) dx = F(x) + C $\\
 \hline
-1 & $x^\alpha$ & \multirow{2}{4em}{$\frac{x^{\alpha + 1}}{\alpha + 1} + C$}\\
-  & $\alpha \neq 0$ &\\
+$x^\alpha$ & \multirow{2}{4em}{$\frac{x^{\alpha + 1}}{\alpha + 1} + C$}\\
+  $\alpha \neq 0$ &\\
 \hline
-2 & $sin(kx)$ & $-\frac{cos(kx)}{k} + C$\\
+$sin(kx)$ & $-\frac{cos(kx)}{k} + C$\\
 \hline
-3 & $cos(kx)$ & $\frac{sin(kx)}{k} + C$\\
+$cos(kx)$ & $\frac{sin(kx)}{k} + C$\\
 \hline
-4 & $sec^2(kx)$ & $\frac{tan(kx)}{k} + C$\\
+$sec^2(kx)$ & $\frac{tan(kx)}{k} + C$\\
 \hline
-5 & $csc^2(kx)$ & $-\frac{cot(kx)}{k+C}$\\
+$csc^2(kx)$ & $-\frac{cot(kx)}{k+C}$\\
 \hline
-6 & $e^{kx}$ & $\frac{e^{kx}}{k} + C$\\
+$e^{kx}$ & $\frac{e^{kx}}{k} + C$\\
 \hline
-7 & $x^-1 , \frac{1}{x}$ & $ln|x| + C$\\
+$x^-1 , \frac{1}{x}$ & $ln|x| + C$\\
 \hline
-8 & $\frac{1}{\sqrt{1-x^2}}$ & $sin^{-1} + C$\\
+$\frac{1}{\sqrt{1-x^2}}$ & $sin^{-1} + C$\\
 \hline
-9 & $\frac{1}{1+x^2}$ & $tan^{-1}x + C$\\
+$\frac{1}{1+x^2}$ & $tan^{-1}x + C$\\
 \hline
-10 & $a^{kx}$ & $\frac{1}{k ln a} a^{kx} + C$\\
+$a^{kx}$ & $\frac{1}{k ln a} a^{kx} + C$\\
 \hline
-11 & $\frac{1}{\sqrt{a^2-x^2}}$ & $sin^{-1} \frac{x}{a} + C$\\
+$\frac{1}{\sqrt{a^2-x^2}}$ & $sin^{-1} \frac{x}{a} + C$\\
 \hline
-12 & $\frac{1}{a^2 + x^2}$ & $\frac{1}{a} tan^{-1}(x/a) + C$\\
+$\frac{1}{a^2 + x^2}$ & $\frac{1}{a} tan^{-1}(x/a) + C$\\
 \hline
 \end{tabular}
 \end{center}
 
+\end{multicols}
+
+
+\begin{multicols}
 \section{Substitution Techniques}
 \subsection{U Substitution}
 \begin{gather*}
   \int\limits f(g(x)) g'(x) dx = \int\limits f(u) du = F(u) + C\\
   \text{where: } u = g(x), du =g'(x)
 \end{gather*}
+
+\columnbreak
 
 \subsection{Integration by Parts}
 \begin{gather*}
@@ -203,6 +214,7 @@ $csc(x)$ & $-cot(x) csc(x)$\\
   \\
   \int\limits _a^b f(x)g'(x) = f(x)g(x) \Big| _a^b - \int\limits _a^b g(x)f'(x) dx
 \end{gather*}
+\end{multicols}
 
 \section{Engineering Formulas}
 \subsection{Spring Formulas}
