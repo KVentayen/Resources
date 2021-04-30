@@ -298,6 +298,31 @@ Repeated Quadratic Irreducible Factor & $(x^2+4)^2$ & $\frac{Ax+B}{(x^2+4)} + \f
   %May need to complete later
 \end{gather*}
 
+\subsection{Improper Integrals}
+\subsubsection{Type 1}
+$x \in [a,b]$, $f(x)$ is continuous on $[a,b)$ at $x=b$ $f(x)$ discontinues
+%May need to complete
+\begin{gather*}
+  %\int \limits _{a}^{b} f(x) dx\\
+  %[a,b] - \text{finite}\\
+  %f(x) - \text{continuous}\\
+  \int \limits _{a}^{\infty} f(x) = \lim_{x\to\infty} \left ( \int \limits _{a}^{b} f(x) dx \right )
+\end{gather*}
+
+\subsubsection{Type 2}
+$f(x)$ sicontinues at $x=a$, continuous on $(a,b]$
+\begin{gather*}
+  %x \in [a,b], f(x) \text{ - continuous on } [a, b)\\
+  \int \limits _{a}^{b} f(x)dx = \lim_{t\to\ a} \int \limits _{t}^{b} f(x) dx
+\end{gather*}
+
+\subsubsection{Type 3}
+$f(x)$ discontinues at $x=c$, $a<c<b$ everywhere else on $[a,b]$\\
+$f(x)$ is continuous
+\begin{gather*}
+  \int \limits _{a}^{b} f(x)dx = \int \limits _{a}^{c} f(x)dx + \int \limits _{c}^{b} f(x)dx
+\end{gather*}
+
 \pagebreak
 
 \section{Additional Resources}

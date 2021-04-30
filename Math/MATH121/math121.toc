@@ -1,24 +1,28 @@
-\contentsline {section}{\numberline {1}Trigonometric Concepts}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Unit Circle}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Basic Trigonometry}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Pythagorean Theorem Identities}{3}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Half Angle Identities}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Double Angle Identities}{3}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Power Reduction Identities}{4}{subsection.1.6}%
-\contentsline {section}{\numberline {2}Trigonometric Substitution}{4}{section.2}%
-\contentsline {section}{\numberline {3}Table of Basic Derivatives}{4}{section.3}%
-\contentsline {section}{\numberline {4}Table of Basic Integrals}{4}{section.4}%
-\contentsline {section}{\numberline {5}Substitution Techniques}{4}{section.5}%
-\contentsline {subsection}{\numberline {5.1}U Substitution}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Integration by Parts}{5}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Engineering Formulas}{5}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Spring Formulas}{5}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Fluid Formulas}{6}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Method of Partial Fractions}{6}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Decomposition Types}{6}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Numerical Integration}{6}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Midpoint Rule}{6}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Trapezoidal Rule}{7}{subsubsection.7.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.3}Error Approximation (Actual Error)}{7}{subsubsection.7.2.3}%
-\contentsline {subsubsection}{\numberline {7.2.4}Error Bounds}{7}{subsubsection.7.2.4}%
-\contentsline {section}{\numberline {8}Additional Resources}{8}{section.8}%
+\contentsline {section}{\numberline {1}Trigonometric Concepts}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Unit Circle}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Basic Trigonometry}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Pythagorean Theorem Identities}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Half Angle Identities}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Double Angle Identities}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Power Reduction Identities}{5}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Trigonometric Substitution}{5}{section.2}%
+\contentsline {section}{\numberline {3}Table of Basic Derivatives}{5}{section.3}%
+\contentsline {section}{\numberline {4}Table of Basic Integrals}{5}{section.4}%
+\contentsline {section}{\numberline {5}Substitution Techniques}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}U Substitution}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Integration by Parts}{6}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Engineering Formulas}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Spring Formulas}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Fluid Formulas}{7}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Method of Partial Fractions}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Decomposition Types}{7}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Numerical Integration}{7}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Midpoint Rule}{7}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Trapezoidal Rule}{8}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Error Approximation (Actual Error)}{8}{subsubsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.4}Error Bounds}{8}{subsubsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.3}Improper Integrals}{8}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Type 1}{8}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Type 2}{8}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Type 3}{9}{subsubsection.7.3.3}%
+\contentsline {section}{\numberline {8}Additional Resources}{10}{section.8}%

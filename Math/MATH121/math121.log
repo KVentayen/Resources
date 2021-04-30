@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  30 APR 2021 00:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  30 APR 2021 00:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,6 +549,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {c:/LaTeX/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
 Package epstopdf Info: Source file: <./assets/unit-circle7_43215.eps>
 (epstopdf)                    date: 2021-03-06 12:05:18
 (epstopdf)                    size: 546867 bytes
@@ -560,34 +561,34 @@ to.pdf>
 5-eps-converted-to.pdf ./assets/unit-circle7_43215.eps>
 (epstopdf)             \includegraphics on input line 48.
 Package epstopdf Info: Output file is already uptodate.
-<./assets/unit-circle7_43215-eps-converted-to.pdf, id=133, 593.21625pt x 593.21
+<./assets/unit-circle7_43215-eps-converted-to.pdf, id=157, 593.21625pt x 593.21
 625pt>
 File: ./assets/unit-circle7_43215-eps-converted-to.pdf Graphic file (type pdf)
 <use ./assets/unit-circle7_43215-eps-converted-to.pdf>
 Package pdftex.def Info: ./assets/unit-circle7_43215-eps-converted-to.pdf  used
  on input line 48.
 (pdftex.def)             Requested size: 469.75502pt x 469.77621pt.
-
-[2 <./Assets/unit-circle7_43215-eps-converted-to.pdf>] [3] [4] [5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 304--310
+ [3 <./Assets/unit-circle7_43215-eps-converted-to.pdf>] [4] [5] [6] [7]
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 329--335
 
  []
 
 
-Overfull \hbox (34.73378pt too wide) in paragraph at lines 304--310
+Overfull \hbox (34.73378pt too wide) in paragraph at lines 329--335
 \OT1/cmr/m/n/12 The Or-ganic Chem-istry Tu-tor: [][]$\OT1/cmtt/m/n/12 https : /
  / www . youtube . com / channel / UCEWpbFLzoYGPfuWUMFPSaoA$[][] 
  []
 
-[8] (./math121.aux)
+[10] (./math121.aux)
 Package rerunfilecheck Info: File `math121.out' has not changed.
-(rerunfilecheck)             Checksum: 9736A6F2E68EF4E59629D6F229EC23FD;1616.
+(rerunfilecheck)             Checksum: 40DD710DED65102238006B02326CBB6E;1882.
  ) 
 Here is how much of TeX's memory you used:
- 9275 strings out of 479382
- 134828 string characters out of 5870331
- 481227 words of memory out of 5000000
- 26178 multiletter control sequences out of 15000+600000
+ 9285 strings out of 479382
+ 134991 string characters out of 5870331
+ 481232 words of memory out of 5000000
+ 26182 multiletter control sequences out of 15000+600000
  413007 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,16n,72p,267b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -604,10 +605,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/LaTeX/texlive/2020/texmf
 nts/type1/public/amsfonts/cm/cmsy6.pfb><c:/LaTeX/texlive/2020/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb><c:/LaTeX/texlive/2020/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt12.pfb>
-Output written on math121.pdf (8 pages, 208325 bytes).
+Output written on math121.pdf (10 pages, 211397 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 34 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 
