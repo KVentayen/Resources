@@ -25,4 +25,5 @@
 \contentsline {subsubsection}{\numberline {7.3.1}Type 1}{8}{subsubsection.7.3.1}%
 \contentsline {subsubsection}{\numberline {7.3.2}Type 2}{8}{subsubsection.7.3.2}%
 \contentsline {subsubsection}{\numberline {7.3.3}Type 3}{9}{subsubsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.4}The Length of the Curve}{9}{subsection.7.4}%
 \contentsline {section}{\numberline {8}Additional Resources}{10}{section.8}%
