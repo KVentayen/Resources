@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  30 APR 2021 00:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.23)  30 APR 2021 09:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -605,7 +605,7 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/LaTeX/texlive/2020/texmf
 nts/type1/public/amsfonts/cm/cmsy6.pfb><c:/LaTeX/texlive/2020/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb><c:/LaTeX/texlive/2020/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt12.pfb>
-Output written on math121.pdf (10 pages, 212325 bytes).
+Output written on math121.pdf (10 pages, 212343 bytes).
 PDF statistics:
  270 PDF objects out of 1000 (max. 8388607)
  240 compressed objects within 3 object streams
