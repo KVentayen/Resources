@@ -1,0 +1,93 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}   %For page Setup
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+
+\title{PIC10F200 Reference}
+\author{K}
+\date{June 3, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+
+
+\begin{document}
+
+\begin{comment}
+\begin{titlepage}
+    %\titlepage
+    \maketitle
+\end{titlepage}
+\end{comment}
+
+\maketitle
+
+\tableofcontents{}
+\pagebreak
+
+\section{PIC10F200 Datasheet}
+Here is a link to the \href{https://ww1.microchip.com/downloads/en/DeviceDoc/40001239F.pdf}{PIC10F200 Datasheet}.
+
+\section{Tutorials}
+\subsection{Circuit Bread}
+\subsubsection{Part 1}
+\href{https://www.circuitbread.com/tutorials/how-to-use-a-simple-microcontroller-series-intro-pic10f200-part-1}{How to use a Simple Microcontroller Series Intro (PIC10F200) - Part 1}\\
+\subsubsection{Part 2}
+\href{https://www.circuitbread.com/tutorials/equipment-for-our-simple-microcontroller-tutorials-pic10f200-part-2}{Equiptment for our Simple Microcontroller tutorials (PIC10F200) - Part 2}\\
+\subsubsection{Part 3}
+\href{https://www.circuitbread.com/tutorials/microcontroller-architecture-part-3-simple-microcontroller-pic10f200}{Microcontroller Architecture - Part 3 Simple Microcontroller (PIC10F200)}\\
+\subsubsection{Part 4}
+\href{https://www.circuitbread.com/tutorials/circuit-setup-mplab-x-ide-part-4-simple-microcontroller-pic10f200}{Circuit Setup / MPLAB X IDE  - Part 4 Simple Microcontroller (PIC10F200)}\\
+\subsubsection{Part 5}
+\href{https://www.circuitbread.com/tutorials/the-first-assembly-program-part-5-simple-microcontroller-pic10f200}{The First Assembly Program - Part 5 Simple Microcontroller (PIC10F200)}\\
+\subsubsection{Part 6}
+\href{https://www.circuitbread.com/tutorials/how-to-blink-an-led-part-6-microcontroller-basics-pic10f200}{How to Blick an LED - Part 6 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 7}
+\href{https://www.circuitbread.com/tutorials/pwm-led-dimming-part-7-microcontroller-basics-pic10f200}{Creating a PWM in Assembly - Part 7 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 8}
+\href{https://www.circuitbread.com/tutorials/musical-microcontroller-part-8-microcontroller-basics-pic10f200}{Musical Microcontroller - Part 8 Microcontroller Baics (PIC10F200)}\\
+\subsubsection{Part 9}
+\href{https://www.circuitbread.com/tutorials/button-inputs-part-9-microcontroller-basics-pic10f200?token=LmskE2t7648abpBhlu5zQP1KYlriMAeo}{Button Inputs - Part 9 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Special}
+\href{https://www.circuitbread.com/tutorials/christmas-lights-special-microcontroller-basics-pic10f200}{Christmas Lights Special - Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 10}
+\href{https://www.circuitbread.com/tutorials/servo-motor-indirect-addressing-and-electronic-lock---part-10-microcontroller-basics-pic10f200}{Servo motor, indirect addressing, and electric lock - Part 10 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 11}
+\href{https://www.circuitbread.com/tutorials/communicating-with-a-pc-using-uart---part-11-microcontroller-basics-pic10f200}{Communicating with a PC using UART - Part 11 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 12}
+\href{https://www.circuitbread.com/tutorials/bluetooth-controlled-robot?token=w_zWrzkxdM0H4BuRq-v0tg9uQv_kKaYI}{Bluetooth Controlled Robot - Part 12 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 13}
+\href{https://www.circuitbread.com/tutorials/line-following-car-part-13-microcontroller-basics-pic10f200}{Line Following Car - Part 13 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 14}
+\href{https://www.circuitbread.com/tutorials/obstacle-avoidance-robot-part-14-microcontroller-basics-pic10f200}{Obstacle Avoidance Robot - Part 14 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 15}
+\href{https://www.circuitbread.com/tutorials/i2c-fm-radio-part-15-microcontroller-basics-pic10f200}{I2C FM Radio - Part 15 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 16}
+\href{https://www.circuitbread.com/tutorials/digital-thermometer-part-16-microcontroller-basics-pic10f200}{Digital Thermometer - Part 16 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 17}
+\href{https://www.circuitbread.com/tutorials/sine-wave-generator-part-17-microcontroller-basics-pic10f200}{Sine Wave Generator - Part 17 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 18}
+\href{https://www.circuitbread.com/tutorials/digital-voltmeter-part-18-microcontroller-basics-pic10f200}{Digital Voltmeter - Part 18 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 19}
+\href{https://www.circuitbread.com/tutorials/infrared-rgb-led-controller-part-19-microcontroller-basics-pic10f200}{Infrared RGB LED controller - Part 19 Microcontroller Basics (PIC10F200)}\\
+\subsubsection{Part 20}
+\href{https://www.circuitbread.com/tutorials/1602-character-lcd-part-20-microcontroller-basics-pic10f200?token=he8HKfRsVXpEyyyeqTTF}{1602 Character LCD - Part 20 Microcontroller Basics (PIC10F200)}
+
+\end{document}
