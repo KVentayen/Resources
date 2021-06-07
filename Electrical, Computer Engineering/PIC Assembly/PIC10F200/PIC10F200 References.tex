@@ -45,6 +45,196 @@
 \section{PIC10F200 Datasheet}
 Here is a link to the \href{https://ww1.microchip.com/downloads/en/DeviceDoc/40001239F.pdf}{PIC10F200 Datasheet}.
 
+\noindent \textbf{Table of Contents}
+
+\renewcommand{\labelenumii}{\arabic{enumii}}          %This uses aribic numbers for the second level
+\begin{enumerate}
+
+  % Section 1
+  \item General Description (Page 4)
+  \begin{enumerate}
+    \item [1.1] Applications (Page 4)
+  \end{enumerate}
+
+  % Section 2
+  \item PIC10F200/202/204/206 Device Varieties (Page 5)
+  \begin{enumerate}
+    \item [2.1] Quick Turn Programming (QTP) Devices (Page 5)
+    \item [2.2] Serialized Quick Turn Programming$^\text{SM}$ (SQTP$^\text{SM}$) Devices (Page 5)
+  \end{enumerate}
+
+  % Section 3
+  \item Architectual Overview (Page 6)
+  \begin{enumerate}
+    \item [3.1] Clock Scheme/Instruction Cycle (Page 10)
+    \item [3.2] Instruction Flow/Pipelining (Page 10)
+  \end{enumerate}
+
+  % Section 4
+  \item Memory Organization (Page 11)
+  \begin{enumerate}
+    \item [4.1] Program Memory Organization for the PIC10F200/204 (Page 11)
+    \item [4.2] Program Memory Organization for the PIC10F202/206 (Page 12)
+    \item [4.3] Data Memory Organization (Page 12)
+    \begin{enumerate}
+      \item [4.3.1] GENERAL PURPOSE REGISTER FILE (Page 12)
+      \item [4.3.2] SPECIAL FUNCTION REGISTERS (Page 14)
+    \end{enumerate}
+    \item [4.4] STATUS Register (Page 15)
+    \item [4.5] OPTION Register (Page 16)
+    \item [4.6] OSCCAL Register (Page 17)
+    \item [4.7] Program counter (Page 18)
+    \begin{enumerate}
+      \item [4.7.1] EFFECTS OF RESET (Page 18)
+    \end{enumerate}
+    \item [4.8] Stack (Page 18)
+    \item [4.9] Indirect Data Addressing: INDF and FSR Registers
+    \item [4.10] Indirect Addressing
+  \end{enumerate}
+
+  % Section 5
+  \item I/O Port (Page 20)
+  \begin{enumerate}
+    \item [5.1] GPIO (Page 20)
+    \item [5.2] TRIS Registers (Page 20)
+    \item [5.3] I/O Interfacing (Page 20)
+    \item [5.4] I/O Programming Considerations (Page 21)
+    \begin{enumerate}
+      \item [5.4.1] BIDIRECTIONAL I/O PORTS (Page 21)
+      \item [5.4.2] SUCCESSIVE OPERATIONS ON I/O PORTS (Page 21)
+    \end{enumerate}
+  \end{enumerate}
+
+  % Section 6
+  \item Timer0 Module and TMR0 Register (PIC10F200/202) (Page 23)
+  \begin{enumerate}
+    \item [6.1] Using Timer0 with an External Clock (PIC10F200/202) (Page 24)
+    \begin{enumerate}
+      \item [6.1.1] EXTERNAL CLOCK SYNCRONIZATION (Page 24)
+      \item [6.1.2] TIMER0 INCREMENT DELAY (Page 25)
+    \end{enumerate}
+    \item Prescaler (Page 25)
+    \begin{enumerate}
+      \item [6.2.1] SWITCHING PRESCALER ASSIGNMENT (Page 25)
+    \end{enumerate}
+  \end{enumerate}
+
+  % Section 7
+  \item Timer0 Module and TMR0 Register (PIC10F204/206) (Page 27)
+  \begin{enumerate}
+    \item [7.1] Using Timer0 with an External Clock (PIC10F204/206) (Page 28)
+    \begin{enumerate}
+      \item [7.1.1] EXTERNAL CLOCK SYNCRONIZATION (Page 28)
+      \item [7.1.2] TIMER0 INCREMENT DELAY (Page 29)
+    \end{enumerate}
+    \item [7.2] Prescaler (Page 29)
+    \begin{enumerate}
+      \item [7.2.1] SWITCHING PRESCALER ASSIGNMENT (Page 29)
+    \end{enumerate}
+  \end{enumerate}
+
+  % Section 8
+  \item Comparator Module (Page 31)
+  \begin{enumerate}
+    \item [8.1] Comparator Configuration (Page 32)
+    \item [8.2] Comparator Operation (Page 33)
+    \item [8.3] Comparator Reference (Page 33)
+    \item [8.4] Comparator Response Time (Page 33)
+    \item [8.5] Comparator Output (Page 33)
+    \item [8.6] Comparator Wake-up Flag (Page 33)
+    \item [8.7] Comparator Operation During Sleep (Page 33)
+    \item [8.8] Effects of a Reset (Page 33)
+    \item [8.9] Analog Input Connection Considerations (Page 33)
+  \end{enumerate}
+
+  % Section 9
+  \item Special Features of the CPU (Page 35)
+  \begin{enumerate}
+    \item [9.1] Configuration Bits (Page 35)
+    \item [9.2] Oscillator Configurations (Page 36)
+    \begin{enumerate}
+      \item [9.2.1] OSCILLATOR TYPES (Page 36)
+      \item [9.2.2] INTERNAL 4MHz OCILLATOR (Page 36)
+    \end{enumerate}
+    \item [9.3] Reset (Page 36)
+    \begin{enumerate}
+      \item [9.3.1] $\overline{\text{MCLR}}$ ENABLE (Page 37)
+    \end{enumerate}
+    \item [9.4] Power-on-Reset (POR) (Page 37)
+    \item [9.5] Device Reset Timer (DRT) (Page 40)
+    \item [9.6] Watchdog Timer (Page 40)
+    \begin{enumerate}
+      \item [9.6.1] WDT PERIOD
+      \item [9.6.2] WDT PROGRAMMING CONSIDERATIONS
+    \end{enumerate}
+    \item [9.7] Time-out Sequence, Power-down and Wake-up from Sleep Status Bits ($\overline{\text{TO}}$, $\overline{\text{PD}}$, GPWUF, CWUF) (Page 42)
+    \item [9.8] Reset on Brown-out (Page 42)
+    \item [9.9] Power-down Mode (Sleep) (Page 43)
+    \begin{enumerate}
+      \item [9.9.1] SLEEP (Page 43)
+      \item [9.9.2] WAKE-UP FROM SLEEP (Page 43)
+    \end{enumerate}
+    \item [9.10] Program Verification/Code Protection (Page 44)
+    \item [9.11] ID Locations (Page 44)
+    \item [9.12] In-Circuit Serial Programming$^{TM}$ (Page 44)
+  \end{enumerate}
+
+  % Section 10
+  \item Instruction Set Summary (Page 45)
+
+  % Section 11
+  \item Development Support (Page 53)
+  \begin{enumerate}
+    \item [11.1] MPLAB X Integrated Development Environment Software (Page 53)
+    \item [11.2] MPLAB XC Compilers (Page 54)
+    \item [11.3] MPASM Assembler (Page 54)
+    \item [11.4] MPLINK Object Linker/MPLIB Object Librarian (Page 54)
+    \item [11.5] MPLAB Assembler, Linker and Librarian for Various Device Families (Page 54)
+    \item [11.6] MPLAB X SIM Software Simulator (Page 55)
+    \item [11.7] MPLAB REAL ICE In-Circuit Emulator System (Page 55)
+    \item [11.8] MPLAB ICD 3 In-Circuit Debugger System (Page 55)
+    \item [11.9] PICkit 3 In-Circuit Debugger/Programmer (Page 55)
+    \item [11.10] PMLAB PM3 Device Programmer (Page 55)
+    \item [11.11] Demonstration/Development Boards, Evaluation Kits, and Starter Kits (Page 56)
+    \item [11.12] Third Party Development Tools (Page 56)
+  \end{enumerate}
+
+  % Section 12
+  \item Electrical Characteristics (Page 57)
+  \begin{enumerate}
+    \item [12.1] DC Characteristics: PIC10F200/202/204/206 (Industrial) (Page 59)
+    \item [12.2] DC Characteristics: PIC10F200/202/204/206 (Extended) (Page 60)
+    \item [12.3] DC Characteristics: PIC10F200/202/204/206 (Industrial, Extended) (Page 61)
+    \item [12.4] Timing Parameter Symbology and Load Conditions - PIC10F200/202/204/206 (Page 63)
+  \end{enumerate}
+
+  % Section 13
+  \item DC and AC Characteristics Graphs and Tables (Page 67)
+
+  % Section 14
+  \item Packaging Information (Page 75)
+  \begin{enumerate}
+    \item [14.1] Package Marking Information (Page 75)
+    \item [14.2] Package Details (Page 78)
+  \end{enumerate}
+
+  \item [] APPENDIX A: REVISION HISTORY (Page 84)
+  \begin{enumerate}
+    \item [] REVISION C (August 2006) (Page 84)
+    \item [] REVISION D (April 2007) (Page 84)
+    \item [] REVISION E (October 2013) (Page 84)
+    \item [] REVISION F (September 2014) (Page 84)
+  \end{enumerate}
+
+  \item [] The Microchip Website (Page 85)
+
+  \item [] Customer Change Notification Service (Page 85)
+
+  \item [] Customer Support (Page 85)
+
+  \item [] Product Identification System (Page 86)
+\end{enumerate}
+
 \section{Tutorials}
 \subsection{Circuit Bread}
 \subsubsection{Part 1}
