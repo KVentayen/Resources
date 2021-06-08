@@ -310,7 +310,7 @@ $x \in [a,b]$, $f(x)$ is continuous on $[a,b)$ at $x=b$ $f(x)$ discontinues
 \end{gather*}
 
 \subsubsection{Type 2}
-$f(x)$ sicontinues at $x=a$, continuous on $(a,b]$
+$f(x)$ dicontinues at $x=a$, continuous on $(a,b]$
 \begin{gather*}
   %x \in [a,b], f(x) \text{ - continuous on } [a, b)\\
   \int \limits _{a}^{b} f(x)dx = \lim_{t\to\ a} \int \limits _{t}^{b} f(x) dx
@@ -328,6 +328,26 @@ $f(x)$ is continuous
   x &= x(t) & y &= y(t) & a \leq &t \leq b\\
   &&S' = \int \limits _{a}^{b} &\sqrt{(x'(t))^2 + (y'(t))^2}
 \end{flalign*}
+
+\section{Area of Revolution}
+\begin{equation*}
+\begin{split}
+  ds &= \sqrt{1+ \left( \frac{dy}{dx} \right) ^2} dx\\
+  dA &= 2\pi y \sqrt{1+ \left( \frac{dy}{dx} \right) ^2}\\
+  1) \int \limits _{a}^{b} dA &= A = 2\pi \int \limits _{a}^{b} y \sqrt{1 + \left( \frac{dy}{dx} \right)^2} dx\\
+  2) x &= xb
+\end{split}
+\end{equation*}
+
+\section{Separable Equations}
+\begin{alignat*}{2}
+  &y'(x) = g(x) h(y), \frac{dy}{dx} = g(x)h(y) \Big| dx\\
+  &dy = h(y)g(x) dx \Big| \frac{1}{h(y)}\\
+  &\frac{1}{h(y)} dy = g(x) dx, H(y) = \frac{1}{h(y)} \longrightarrow H(y)dy = g(x)dx\\
+  &\int \limits H(y) = \int \limits g(x) dx + C\\
+  &\textbf{Implicit Form of Solution}   &\textbf{Explicit Form of Solution}\\
+  &F(y) = G(x) + C  &y = F^{-1}(G(x) + C)\\
+\end{alignat*}
 
 \pagebreak
 
