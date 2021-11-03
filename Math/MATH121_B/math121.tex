@@ -112,21 +112,60 @@
 \end{enumerate}
 
 \section{Hyperbolic Integrals}
-% Equation 49
 \begin{enumerate}
-  \item $\int \limits$
+  % Equation 49
+  \item $\int \limits \sinh u du = \cosh u +C$
+  % Equation 50
+  \item $\int \limits \cosh u du = \sinh u +C$
+  \item $\int \limits \tanh u du = \ln \cosh u +C$
+  \item $\int \limits \coth u du = \ln | \sinh u | +C$
+  \item $\int \limits \text{sech } u du = \tan ^{-1} | \sinh u | +C$
+  \item $\int \limits \text{csch } u du = \ln | \tanh \frac{1}{2} u | +C$
+  % Equation 55
+  \item $\int \limits \text{sech } ^2 u du = \tanh u +C$
+  \item $\int \limits \text{csch } ^2 u du = -\coth u +C$
+  \item $\int \limits \text{sech } u \tanh u du = - \text{sech } u +C$
+  \item $\int \limits \text{csch } u \text{coth } u du = -\text{csch } u +C$
+\end{enumerate}
+
+\section{Inverse Trigonometric Integrals}
+\begin{enumerate}
+  % Equation 59
+  \item $\int \limits \sin ^{-1} u du = u \sin ^{-1} u + \sqrt{1-u^2} +C$
+  % Equation 60
+  \item $\int \limits \cos ^{-1} u du = u \cos ^{-1} u - \sqrt{1-u^2} +C$
+  \item $\int \limits \tan ^{-1} u du = u \tan ^{-1} - \frac{1}{2} \ln (1+u^2) +C$
+  \item $\int \limits u \sin ^{-1} u du = \frac{2u^2-1}{4} \sin ^{-1} u + \frac{u\sqrt{1-u^2}}{4} +C$
+  \item $\int \limits u \cos ^{-1} u du = \frac{2u^1-1}{4} \cos ^{-1} u - \frac{u\sqrt{1-u^2}}{4} +C$
+  \item $\int \limits u \tan ^{-1} u du = \frac{u^2+1}{2} \tan^{-1} u -\frac{u}{2} +C$
+  % Equation 65
+  \item $\int \limits u^n \sin ^{-1} u du = \frac{1}{n+1} \Big[ u^{n+1} \sin ^{-1} u - \int \limits \frac{u^{n+1} du}{\sqrt{1-u^2}}\Big], n \neq 1$
+  \item $\int \limits u^n \cos ^{-1} u du = \frac{1}{n+1} \Big[ u^{n+1} \cos ^{-1} u - \int \limits \frac{u^{n+1} du}{\sqrt{1-u^2}}\Big], n \neq 1$
+  \item $\int \limits u^n \tan ^{-1} u du = \frac{1}{n+1} \Big[ u^{n+1} \tan ^{-1} u - \int \limits \frac{u^{n+1}}{1+u^2}\Big], n \neq -1$
+\end{enumerate}
+
+\section{Integrals Involving $a^2+u^2, a>0$}
+\begin{enumerate}
+  % Equation 68
+  \item $\int \limits \sqrt{a^2 + u^2} du = \frac{u}{2} \sqrt{a^2 + u^2} + \frac{a^2}{2} \ln (u + \sqrt{a^2 + u^2}) +C$
+  \item $u^2 \int \limits \sqrt{a^2 + u^2} du = \frac{u}{8} (a^2 + 2u^2) \sqrt{a^2 + u^2} - \frac{a^4}{8} \ln (u + \sqrt{a^2 + u^2}) + C$
+  % Equation 70
+  \item $\int \limits \frac{\sqrt{a^2+u^2}}{u} du = \sqrt{a^2 + u^2} - a\ln \Big| \frac{a+\sqrt{a^2 + u^2}}{u} \Big| +C$
 \end{enumerate}
 
 \pagebreak
 
 \section{Additional Resources}
+\textbf{Textbook}\\
+Text: \url{https://openstax.org/details/books/calculus-volume-2}\\
+\\
 \textbf{Print}\\
 Calculus Study Guide: \url{https://mt-jfk.com/ap-calculus-study-guide.pdf}\\
 \\
 \textbf{Video}\\
 The Organic Chemistry Tutor: \url{https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA}\\
 Black Pen Red Pen: \url{https://www.youtube.com/user/blackpenredpen}\\
-Khan Academy: \url{https://www.youtube.com/c/khanacademy}
+Khan Academy: \url{https://www.youtube.com/c/khanacademy}\\
 \\
 \textbf{Websites}\\
 Khan Academy - AP/College Calculus BC: \url{https://www.khanacademy.org/math/ap-calculus-bc}
