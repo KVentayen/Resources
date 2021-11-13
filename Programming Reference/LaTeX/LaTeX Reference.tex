@@ -1,0 +1,144 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+
+\title{Math Notes}
+\author{K}
+\date{March 6, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+\definecolor{codegreen}{rgb}{0,0.6,0}       %Define Colors For Coding Examples
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.75, 1.00, 1.00}
+\definecolor{keyword}{rgb}{0.00, 0.50, 1.00}
+
+\lstdefinestyle{basicstyle}{                  %Setup Style for Listings
+    backgroundcolor=\color{white},      %Set Background Color
+    %commentstyle=\color{codegreen},        %Set Comment Style
+    keywordstyle=\color{keyword},           %Set Keyword Style
+    %numberstyle=\tiny\color{codegray},     %Set Number Style
+    %stringstyle=\color{codepurple},        %Set String Style
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,                           %Set Line Numbers
+    %numbersep=5pt,                         %Set Line Number Separation
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=double                              %set Frame
+}
+
+\begin{document}
+\maketitle
+\tableofcontents{}
+\pagebreak
+
+\section{Text Formatting}
+\subsection{Font Styles}
+\begin{tabular}{c c c}
+  Type & Format & Result\\
+  \hline
+  \textbf{Bold} & \verb|\textbf{Text}| & \textbf{Text}\\
+  \textbf{Italics} & \verb|\textit{Text}| & \textit{Text}\\
+  \textbf{Underline} & \verb|\underline{Text}| & \underline{Text}
+\end{tabular}\\
+\\
+\textbf{Source}\\
+\url{https://latex-tutorial.com/symbols/text-formatting/}\\
+\textbf{Further Study}\\
+\url{https://www.overleaf.com/learn/latex/Bold%2C_italics_and_underlining}\\
+\url{https://latex-tutorial.com/changing-font-style/}
+
+\subsection{Font Sizes}
+\begin{tabular}{c c c}
+    Type & Format & Result\\
+    \hline
+    tiny & \verb|{\tiny Text}| & {\tiny Text}\\
+    scriptsize & \verb|{\scriptsize Text}| & {\scriptsize Text}\\
+    footnotesize & \verb|{\footnotesize Text}| & {\footnotesize Text}\\
+    small & \verb|{\small Text}| & {\small Text}\\
+    normalsize (default) & \verb|{\normalsize Text}| & {\normalsize Text}\\
+    large & \verb|{\large Text}| & {\large Text}\\
+    Large & \verb|{\Large Text}| & {\Large Text}\\
+    LARGE & \verb|{\LARGE Text}| & {\LARGE Text}\\
+    huge & \verb|{\huge Text}| & {\huge Text}\\
+    Huge & \verb|{\Huge Text}| & {\Huge Text}\\
+\end{tabular}\\
+\\
+\textbf{Source}\\
+\url{https://texblog.org/2012/08/29/changing-the-font-size-in-latex/}\\
+\url{https://latex-tutorial.com/symbols/text-formatting/}
+
+\subsection{Verbatim}
+\url{https://www.overleaf.com/learn/latex/Code_listing}
+
+
+\section{Symbols}
+\subsection{Degrees Symbol}
+The \verb|\degree| command is provided by the \verb|gensymb| package, so if you add:\\
+\\
+\verb|\usepackage{gensymb}|\\
+\\
+to your preamble, that should enable the command.\\
+\\
+Another alternative is the \verb|\textdegree| command, which is provided by the \verb|textcomp| package. And finally, \verb|$^{\circ}$| is another way of obtaining roughly the right symbol.
+
+
+\section{Tables}
+
+
+\section{Columns}
+
+
+\section{Tikz}
+\subsection{circuitikz}
+\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_4)%E2%80%94Circuit_Diagrams_Using_Circuitikz}
+
+
+\section{Including Files}
+\url{https://www.overleaf.com/learn/latex/Code_listing}
+\lstset{style=basicstyle}
+\begin{lstlisting}[title=Function: Graph::isCycle()]
+bool Graph::isCycle() {   //similar to DFS
+for(int i = 0; i < size; i++) {
+  parents[i] = i;
+  colors[i] = i;
+  colors[i] = 'W';
+}
+int t = 0;
+
+for(int i =0; i < size; i++) {
+  //nodes are either White or Black in here
+  if(colors[i] == 'W'){
+    //color[i] = 'G';
+    bool res = isCycleVisit(i, t);
+    if(res)
+      return res;
+  }//if
+}//for
+return false;
+}
+\end{lstlisting}
+\end{document}
