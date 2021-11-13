@@ -1,0 +1,83 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+
+\title{Math Notes}
+\author{K}
+\date{March 6, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+\begin{document}
+\maketitle
+\tableofcontents{}
+\pagebreak
+
+\section{Time Analysis}
+\subsection{Logarithms}
+\url{http://dl.uncw.edu/digilib/Mathematics/Algebra/mat111hb/EandL/logprop/logprop.html}
+
+\begin{align*}
+  \log_a(uv) &= \log_a u + \log_a v\\
+  \ln(uv) &= \ln u + \ln v
+\end{align*}
+
+\begin{align*}
+  \log_a \Big( \frac{u}{v} \Big) &= \log_a u - \log_a v\\
+  \ln \Big( \frac{u}{v} \Big) &= \ln u - \ln v
+\end{align*}
+
+\begin{align*}
+  \log_a u^n &= n \log_a u\\
+  \ln u^n &= n \ln u
+\end{align*}
+
+\section{Classification of Edges}
+\begin{itemize}
+  \item \textbf{Tree Edge} $(u, v)$ if v was WHITE while exploring $(u, v)$
+  \begin{equation*}
+    v=Adj[u][v]
+  \end{equation*}
+  $(u, v)$ is a Tree Edge if v is white
+  \begin{itemize}
+    \item discover a tree for the first time
+    \item A DFS tree consists of Tree edges and nodes involved
+  \end{itemize}
+  \item \textbf{Back Edge} $(u, v)$ connects vertex $u$ to its ancestor $v$ in a depth-first tree ($v$ is GRAY)
+  \begin{itemize}
+    \item If $v$ is Grey, then $(u, v)$ is Back Edge
+  \end{itemize}
+  \item \textbf{Forward Edge} $(u, v)$ is a non-tree edge connecting $u$ to a decendant $v$ in a depth-first tree ($v$ is BLACK)
+  \item \textbf{Cross Edge} $(u, v)$ is all other edges
+  \item \textbf{Summary}
+  \begin{itemize}
+    \item \textbf{Tree Edge} $(u, v)$ ($v$ is WHITE)
+    \item \textbf{Back Edge} $(u, v)$ ($v$ is GRAY)
+    \item \textbf{Forward Edge} $(u, v)$ ($v$ is Black, $stamps[u],d<stamps[v].d$)
+    \item \textbf{Cross Edge} $(u, v)$ ($v$ is Black, $stamps[u].d>stamps[v].d$)
+  \end{itemize}
+  \item All nodes are white initially
+  \item Given a directed graph $G=(V, E)$, write a function \textbf{isCycle()} that returns true if the given graph has a cycle
+  \begin{itemize}
+    \item If we discover a Grey node of by DFS, then there is a cycle in the graph
+  \end{itemize}
+\end{itemize}
+
+\end{document}
