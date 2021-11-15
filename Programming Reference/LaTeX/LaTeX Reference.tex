@@ -107,6 +107,91 @@ Another alternative is the \verb|\textdegree| command, which is provided by the 
 
 
 \section{Tables}
+Tables are Included in \LaTeX ~there are no packages are required to be used.
+\subsection{Table with no Borders}
+\begin{multicols}{2}
+\lstset{style=basicstyle}
+\begin{lstlisting}[]
+\begin{center}
+  \begin{tabular}{ c c c }
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9
+  \end{tabular}
+\end{center}
+\end{lstlisting}
+\columnbreak
+\begin{center}
+  \begin{tabular}{ c c c }
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9
+  \end{tabular}
+\end{center}
+\end{multicols}
+
+\subsection{Table with Borders}
+\begin{multicols}{2}
+\lstset{style=basicstyle}
+\begin{lstlisting}[]
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9\\
+    \hline
+  \end{tabular}
+\end{center}
+\end{lstlisting}
+\columnbreak
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9\\
+    \hline
+  \end{tabular}
+\end{center}
+\end{multicols}
+
+\subsection{Table with Double Borders}
+\begin{multicols}{2}
+\lstset{style=basicstyle}
+\begin{lstlisting}[]
+\begin{center}
+  \begin{tabular}{||c c c||}
+    \hline
+    cell1 & cell2 & cell3\\ [0.5ex]
+    \hline \hline
+    cell4 & cell5 & cell6\\
+    \hline
+    cell7 & cell8 & cell9\\
+    \hline
+    cell10 & cell11 & cell12\\ [1ex]
+    \hline
+  \end{tabular}
+\end{center}
+\end{lstlisting}
+\columnbreak
+\begin{center}
+  \begin{tabular}{||c c c||}
+    \hline
+    cell1 & cell2 & cell3\\ [0.5ex]
+    \hline \hline
+    cell4 & cell5 & cell6\\
+    \hline
+    cell7 & cell8 & cell9\\
+    \hline
+    cell10 & cell11 & cell12\\ [1ex]
+    \hline
+  \end{tabular}
+\end{center}
+\end{multicols}
+
+\noindent\textbf{Source}\\
+\url{https://www.overleaf.com/learn/latex/Tables}
 
 
 \section{Columns}
