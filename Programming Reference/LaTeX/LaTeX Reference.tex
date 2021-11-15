@@ -17,6 +17,7 @@
 
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{blindtext}    %For adding lorem Ipsum
 
 \hypersetup{                                %Setup for Hyperlink Colors
     colorlinks=true,
@@ -55,6 +56,8 @@
 \tableofcontents{}
 \pagebreak
 
+\section{Comments}
+
 \section{Text Formatting}
 \subsection{Font Styles}
 \begin{tabular}{c c c}
@@ -65,11 +68,15 @@
   \textbf{Underline} & \verb|\underline{Text}| & \underline{Text}
 \end{tabular}\\
 \\
-\textbf{Source}\\
-\url{https://latex-tutorial.com/symbols/text-formatting/}\\
-\textbf{Further Study}\\
-\url{https://www.overleaf.com/learn/latex/Bold%2C_italics_and_underlining}\\
-\url{https://latex-tutorial.com/changing-font-style/}
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://latex-tutorial.com/symbols/text-formatting/}
+\end{itemize}
+\textbf{Further Study}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Bold%2C_italics_and_underlining}
+  \item \url{https://latex-tutorial.com/changing-font-style/}
+\end{itemize}
 
 \subsection{Font Sizes}
 \begin{tabular}{c c c}
@@ -87,12 +94,16 @@
     Huge & \verb|{\Huge Text}| & {\Huge Text}\\
 \end{tabular}\\
 \\
-\textbf{Source}\\
-\url{https://texblog.org/2012/08/29/changing-the-font-size-in-latex/}\\
-\url{https://latex-tutorial.com/symbols/text-formatting/}
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://texblog.org/2012/08/29/changing-the-font-size-in-latex/}
+  \item \url{https://latex-tutorial.com/symbols/text-formatting/}
+\end{itemize}
 
 \subsection{Verbatim}
-\url{https://www.overleaf.com/learn/latex/Code_listing}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Code_listing}
+\end{itemize}
 
 
 \section{Symbols}
@@ -174,7 +185,7 @@ Tables are Included in \LaTeX ~there are no packages are required to be used.
   \end{tabular}
 \end{center}
 \end{lstlisting}
-\columnbreak
+%\columnbreak
 \begin{center}
   \begin{tabular}{||c c c||}
     \hline
@@ -190,20 +201,54 @@ Tables are Included in \LaTeX ~there are no packages are required to be used.
 \end{center}
 \end{multicols}
 
-\noindent\textbf{Source}\\
-\url{https://www.overleaf.com/learn/latex/Tables}
+\noindent\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Tables}
+\end{itemize}
 
 
 \section{Columns}
+Include the following in the preamble:
+\lstset{style=basicstyle}
+\begin{lstlisting}[title=Preamble]
+\usepackage{multicol}         %Package for columns
+\setlength{\columnsep}{1cm}   %Initialize spacing between columns
+\end{lstlisting}
 
+\subsection{Column Separation}
+\begin{lstlisting}[]
+\begin{multicols}{2}
+  [
+  \noindent \textbf{First Section}\\
+  All things are subject to decay. And when fate summons, Monarchs must obey.
+  ]
+  \blindtext
+\end{multicols}
+Thanks to the genius of the authors of life itself this occurs and will continue until the cycle ends.
+\end{lstlisting}
+
+\begin{multicols}{2}
+  [
+  \noindent \textbf{First Section}\\
+  All things are subject to decay. And when fate summons, Monarchs must obey.
+  ]
+  \blindtext
+\end{multicols}
+Thanks to the genius of the authors of life itself this occurs and will continue until the cycle ends.
+
+\noindent\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Multiple_columns}
+\end{itemize}
 
 \section{Tikz}
 \subsection{circuitikz}
-\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_4)%E2%80%94Circuit_Diagrams_Using_Circuitikz}
-
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_4)%E2%80%94Circuit_Diagrams_Using_Circuitikz}
+\end{itemize}
 
 \section{Including Files}
-\url{https://www.overleaf.com/learn/latex/Code_listing}
 \lstset{style=basicstyle}
 \begin{lstlisting}[title=Function: Graph::isCycle()]
 bool Graph::isCycle() {   //similar to DFS
@@ -226,4 +271,10 @@ for(int i =0; i < size; i++) {
 return false;
 }
 \end{lstlisting}
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Code_listing}
+\end{itemize}
+
+
 \end{document}
