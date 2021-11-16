@@ -11,7 +11,7 @@
 \usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
 \epstopdfsetup{update}
 
-\title{Math Notes}
+\title{LaTeX Notes}
 \author{K}
 \date{March 6, 2020}
 
@@ -57,6 +57,23 @@
 \pagebreak
 
 \section{Comments}
+Comments are lines parts of code that are not compiled.\\
+This can be done as a line or as an environment.
+
+\lstset{style=basicstyle}
+\begin{lstlisting}[title=Comment by Line]
+  % This line would not show up on the compiled PDF.
+\end{lstlisting}
+
+\begin{lstlisting}[title=Comment by environment]
+  \begin{comment}
+    This line would not show up on the compiled PDF.
+    This would not be in the final document either.
+    Nor would this one.
+  \end{comment}
+\end{lstlisting}
+
+\section{Preamble}
 
 \section{Text Formatting}
 \subsection{Font Styles}
@@ -249,6 +266,8 @@ Thanks to the genius of the authors of life itself this occurs and will continue
 \end{itemize}
 
 \section{Including Files}
+\subsection{Picture Files}
+\subsection{Coding Files}
 \lstset{style=basicstyle}
 \begin{lstlisting}[title=Function: Graph::isCycle()]
 bool Graph::isCycle() {   //similar to DFS
@@ -275,6 +294,5 @@ return false;
 \begin{itemize}
   \item \url{https://www.overleaf.com/learn/latex/Code_listing}
 \end{itemize}
-
 
 \end{document}
