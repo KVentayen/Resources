@@ -1,0 +1,302 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+
+\title{LaTeX Notes}
+\author{K}
+\date{March 6, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{blindtext}    %For adding lorem Ipsum
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+\definecolor{codegreen}{rgb}{0,0.6,0}       %Define Colors For Coding Examples
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.75, 1.00, 1.00}
+\definecolor{keyword}{rgb}{0.00, 0.50, 1.00}
+
+\lstdefinestyle{basicstyle}{                  %Setup Style for Listings
+    backgroundcolor=\color{white},      %Set Background Color
+    %commentstyle=\color{codegreen},        %Set Comment Style
+    keywordstyle=\color{keyword},           %Set Keyword Style
+    %numberstyle=\tiny\color{codegray},     %Set Number Style
+    %stringstyle=\color{codepurple},        %Set String Style
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,                           %Set Line Numbers
+    %numbersep=5pt,                         %Set Line Number Separation
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=double                              %set Frame
+}
+
+\begin{document}
+\maketitle
+\tableofcontents{}
+\pagebreak
+
+\section{Page Setup}
+
+\section{Comments}
+Comments are lines parts of code that are not compiled.\\
+This can be done as a line or as an environment.
+
+\lstset{style=basicstyle}
+\begin{lstlisting}[title=Comment by Line]
+  % This line would not show up on the compiled PDF.
+\end{lstlisting}
+
+\begin{lstlisting}[title=Comment by environment]
+  \begin{comment}
+    This line would not show up on the compiled PDF.
+    This would not be in the final document either.
+    Nor would this one.
+  \end{comment}
+\end{lstlisting}
+
+\section{Preamble}
+
+\section{Text Formatting}
+\subsection{Font Styles}
+\begin{tabular}{c c c}
+  Type & Format & Result\\
+  \hline
+  \textbf{Bold} & \verb|\textbf{Text}| & \textbf{Text}\\
+  \textbf{Italics} & \verb|\textit{Text}| & \textit{Text}\\
+  \textbf{Underline} & \verb|\underline{Text}| & \underline{Text}
+\end{tabular}\\
+\\
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://latex-tutorial.com/symbols/text-formatting/}
+\end{itemize}
+\textbf{Further Study}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Bold%2C_italics_and_underlining}
+  \item \url{https://latex-tutorial.com/changing-font-style/}
+\end{itemize}
+
+\subsection{Font Sizes}
+\begin{tabular}{c c c}
+    Type & Format & Result\\
+    \hline
+    tiny & \verb|{\tiny Text}| & {\tiny Text}\\
+    scriptsize & \verb|{\scriptsize Text}| & {\scriptsize Text}\\
+    footnotesize & \verb|{\footnotesize Text}| & {\footnotesize Text}\\
+    small & \verb|{\small Text}| & {\small Text}\\
+    normalsize (default) & \verb|{\normalsize Text}| & {\normalsize Text}\\
+    large & \verb|{\large Text}| & {\large Text}\\
+    Large & \verb|{\Large Text}| & {\Large Text}\\
+    LARGE & \verb|{\LARGE Text}| & {\LARGE Text}\\
+    huge & \verb|{\huge Text}| & {\huge Text}\\
+    Huge & \verb|{\Huge Text}| & {\Huge Text}\\
+\end{tabular}\\
+\\
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://texblog.org/2012/08/29/changing-the-font-size-in-latex/}
+  \item \url{https://latex-tutorial.com/symbols/text-formatting/}
+\end{itemize}
+
+\subsection{Verbatim}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Code_listing}
+\end{itemize}
+
+
+\section{Symbols}
+\subsection{Degrees Symbol}
+The \verb|\degree| command is provided by the \verb|gensymb| package, so if you add:\\
+\\
+\verb|\usepackage{gensymb}|\\
+\\
+to your preamble, that should enable the command.\\
+\\
+Another alternative is the \verb|\textdegree| command, which is provided by the \verb|textcomp| package. And finally, \verb|$^{\circ}$| is another way of obtaining roughly the right symbol.
+
+
+\section{Tables}
+Tables are Included in \LaTeX ~there are no packages are required to be used.
+\subsection{Table with no Borders}
+\begin{multicols}{2}
+\lstset{style=basicstyle}
+\begin{lstlisting}[]
+\begin{center}
+  \begin{tabular}{ c c c }
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9
+  \end{tabular}
+\end{center}
+\end{lstlisting}
+\columnbreak
+\begin{center}
+  \begin{tabular}{ c c c }
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9
+  \end{tabular}
+\end{center}
+\end{multicols}
+
+\subsection{Table with Borders}
+\begin{multicols}{2}
+\lstset{style=basicstyle}
+\begin{lstlisting}[]
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9\\
+    \hline
+  \end{tabular}
+\end{center}
+\end{lstlisting}
+\columnbreak
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    cell1 & cell2 & cell3\\
+    cell4 & cell5 & cell6\\
+    cell7 & cell8 & cell9\\
+    \hline
+  \end{tabular}
+\end{center}
+\end{multicols}
+
+\subsection{Table with Double Borders}
+\begin{multicols}{2}
+\lstset{style=basicstyle}
+\begin{lstlisting}[]
+\begin{center}
+  \begin{tabular}{||c c c||}
+    \hline
+    cell1 & cell2 & cell3\\ [0.5ex]
+    \hline \hline
+    cell4 & cell5 & cell6\\
+    \hline
+    cell7 & cell8 & cell9\\
+    \hline
+    cell10 & cell11 & cell12\\ [1ex]
+    \hline
+  \end{tabular}
+\end{center}
+\end{lstlisting}
+%\columnbreak
+\begin{center}
+  \begin{tabular}{||c c c||}
+    \hline
+    cell1 & cell2 & cell3\\ [0.5ex]
+    \hline \hline
+    cell4 & cell5 & cell6\\
+    \hline
+    cell7 & cell8 & cell9\\
+    \hline
+    cell10 & cell11 & cell12\\ [1ex]
+    \hline
+  \end{tabular}
+\end{center}
+\end{multicols}
+
+\noindent\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Tables}
+\end{itemize}
+
+
+\section{Columns}
+Include the following in the preamble:
+\lstset{style=basicstyle}
+\begin{lstlisting}[title=Preamble]
+\usepackage{multicol}         %Package for columns
+\setlength{\columnsep}{1cm}   %Initialize spacing between columns
+\end{lstlisting}
+
+\subsection{Column Separation}
+\begin{lstlisting}[]
+\begin{multicols}{2}
+  [
+  \noindent \textbf{First Section}\\
+  All things are subject to decay. And when fate summons, Monarchs must obey.
+  ]
+  \blindtext
+\end{multicols}
+Thanks to the genius of the authors of life itself this occurs and will continue until the cycle ends.
+\end{lstlisting}
+
+\begin{multicols}{2}
+  [
+  \noindent \textbf{First Section}\\
+  All things are subject to decay. And when fate summons, Monarchs must obey.
+  ]
+  \blindtext
+\end{multicols}
+Thanks to the genius of the authors of life itself this occurs and will continue until the cycle ends.
+
+\noindent\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/Multiple_columns}
+\end{itemize}
+
+\section{Tikz}
+\subsection{circuitikz}
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ%3A_A_Tutorial_for_Beginners_(Part_4)%E2%80%94Circuit_Diagrams_Using_Circuitikz}
+\end{itemize}
+
+\section{Including Files}
+\subsection{Image Files}
+\subsection{Coding Files}
+\lstset{style=basicstyle}
+\begin{lstlisting}[title=Function: Graph::isCycle()]
+bool Graph::isCycle() {   //similar to DFS
+for(int i = 0; i < size; i++) {
+  parents[i] = i;
+  colors[i] = i;
+  colors[i] = 'W';
+}
+int t = 0;
+
+for(int i =0; i < size; i++) {
+  //nodes are either White or Black in here
+  if(colors[i] == 'W'){
+    //color[i] = 'G';
+    bool res = isCycleVisit(i, t);
+    if(res)
+      return res;
+  }//if
+}//for
+return false;
+}
+\end{lstlisting}
+\textbf{Source}
+\begin{itemize}
+  \item \url{https://www.youtube.com/watch?v=ByduYnAu2jM}
+  \item \url{https://www.youtube.com/watch?v=-trhlQToLiU}
+  \item \url{https://www.overleaf.com/learn/latex/Code_listing}
+\end{itemize}
+
+\end{document}

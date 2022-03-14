@@ -1,0 +1,173 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}   %For page Setup
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+
+\title{Math Notes}
+\author{K}
+\date{March 6, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+
+
+\begin{document}
+
+\begin{comment}
+\begin{titlepage}
+    %\titlepage
+    \maketitle
+\end{titlepage}
+\end{comment}
+
+\maketitle
+
+\tableofcontents{}
+\pagebreak
+
+\section{Table of Integrals}
+\subsection{Basic Integrals}
+\begin{enumerate}
+  \item $\int \limits u^n du = \frac{u^{n+1}}{n+1} + C, n \neq -1$
+  \item $\int \limits \frac{du}{u} = \ln|u| + C$
+  \item $\int \limits e^u du = e^u + C$
+  \item $\int \limits a^u du = \frac{a^u}{\ln a} + C$
+  \item $\int \limits \sin u du = -\cos u + C$
+  \item $\int \limits \cos u du = \sin u + C$
+  \item $\int \limits \sec^2 u du = \tan u + C$
+  \item $\int \limits \csc^2 u du = -\cot u + C$
+  \item $\int \limits \sec u \tan u du = \sec u + C$
+  \item $\int \limits \csc u \cot u du = -\csc u + C$
+  \item $\int \limits \tan u du = \ln |\sec u| + C$
+  \item $\int \limits \cot u du = \ln |\sin u| + C$
+  \item $\int \limits \sec u du = \ln |\sec u + \tan u| + C$
+  \item $\int \limits \csc u du = \ln |\csc u + \cot u| + C$
+  \item $\int \limits \frac{du}{\sqrt{a^2-u^2}} = \sin^{-1} \frac{u}{a} + C$
+  \item $\frac{du}{a^2 + u^2} = \frac{1}{a}\tan^{-1}\frac{u}{a} + C$
+  \item $\int \limits \frac{du}{u\sqrt{u^2 - a^2}} = \frac{1}{a} \sec^{-1}\frac{u}{a} + C$
+\end{enumerate}
+
+\subsection{Trigonometric Integrals}
+\begin{enumerate}
+  \item $\int \limits \sin ^2 u du = \frac{1}{2} u - \frac{1}{4} \sin 2u +C$
+  \item $\int \limits \cos ^2 u du = \frac{1}{2} u + \frac{1}{4} \sin 2u +C$
+  % Equation 20 \/
+  \item $\int \limits \tan ^2 u du = \tan u -u +C$
+  \item $\int \limits \cot ^2 u du = -\cot u -u +C$
+  \item $\int \limits \sin ^3 u du = -\frac{1}{3} (2 + \sin ^2 u) \cos u +C$
+  \item $\int \limits \cos ^3 u du = \frac{1}{3} (2 + \cos^2 u) \sin u +C$
+  \item $\int \limits \tan ^3 u du = \frac{1}{2} \tan ^2 u \ln | \cos u | +C$
+  % Equation 25 \/
+  \item $\int \limits \cot ^3 u du = -\frac{1}{2} \cot ^2 u - \ln | \sin u | + C$
+  \item $\int \limits \sec ^3 u du = \frac{1}{2} \sec u \tan u + \frac{1}{2} \ln | \sec u + \tan u | +C$
+  \item $\int \limits \csc ^3 u du = -\frac{1}{2} \sec u \cot u + \frac{1}{2} \ln | \csc u - \cot u | +C$
+  \item $\int \limits \sin ^n u du = -\frac{1}{n} \sin ^{n-1} u \cos u + \frac{n-1}{n} \int \limits \sin ^{n-2} u du$
+  \item $\int \limits \cos ^n u du = \frac{1}{n} \cos ^{n-1} u \sin u + \frac{n-1}{n} \int \limits \cos ^{n-2} u du$
+  % Equation 30 \/
+  \item $\int \limits \tan ^n u du = \frac{1}{n-1} \tan ^{n-1} u -\int \limits \tan ^{n-2} u du$
+  \item $\int \limits \cot ^n u du = \frac{-1}{n-1} \cot ^{n-1} u - \int \limits \cot ^{n-2} u du$
+  \item $\int \limits \sec ^n u du = \frac{1}{n-1} \tan u \sec ^{n-2} u + \frac{n-2}{n-1} \int \limits \sec ^{n-2} u du$
+  \item $\int \limits \csc ^n u du = \frac{-1}{n-1} \cot u \csc ^{n-2} u + \frac{n-2}{n-1} \int \limits \csc ^{n-2} u du$
+  \item $\int \limits \sin au \cos bu du = \frac{\sin(a-b)u}{2(a-b)} - \frac{sin(a+b)u}{2(a+b)} +C$
+  % Equation 35 \/
+  \item $\int \limits \cos au \cos bu du = \frac{\sin(a-b)u}{2(a-b)} + \frac{\sin(a+b)u}{2(a+b)} +C$
+  \item $\int \limits \sin au \cos bu du = \frac{\sin(a-b)u}{2(a-b)} + \frac{\cos(a+b)u}{2(a+b)} +C$
+  \item $\int \limits u \sin u du = \sin u - u \cos u +C$
+  \item $\int \limits u \cos u du = \cos u + u \sin u +C$
+  \item $\int \limits u ^n \sin u du = -u ^n \cos u + n \int \limits u ^{n-1} \cos u du$
+  % Equation 40 \/
+  \item $\int \limits u ^n \cos u du = u ^n \sin u - n \int \limits u ^{n-1} \sin u du$
+  \item $\int \limits \sin ^n u \cos ^m u du = -\frac{\sin ^{n-1} u \cos ^{m+1} u}{n+m} + \frac{n-1}{n+m} \int \limits sin^{n-2} u \cos ^m u du\\
+  = \frac{\sin ^{n+1} u \cos ^{m-1} u}{n+m} + \frac{m-1}{n+m} \int \limits \sin ^n u \cos^{m-2} u du$
+\end{enumerate}
+
+\section{Exponential and Logarithms Integrals}
+\begin{enumerate}
+  % Equation 42
+  \item $\int \limits u e ^{au} du = \frac{1}{a^2} (au-1) e^{au} +C$
+  \item $\int \limits u ^n e ^{au} du = \frac{1}{a} u ^n e^{au} - \frac{n}{a} \int \limits u ^{n-1} e ^{au} du$
+  \item $\int \limits e ^{au} \sin bu du = \frac{e^{au}}{a^2 + a^b} (a \sin bu - b \cos bu) +C$
+  % Equation 45
+  \item $\int \limits e^{au} \cos bu du = \frac{e^{au}}{a^2 + b^2} (a \cos bu + b \sin bu) +C$
+  \item $\int \limits \ln u du = u \ln u - u + C$
+  \item $\int \limits u ^n \ln u du = \frac{u^{n+1}}{(n+1)^2} [(n+1)\ln u-1] +C$
+  \item $\int \limits \frac{1}{u \ln u} du = \ln | \ln u | +C$
+\end{enumerate}
+
+\section{Hyperbolic Integrals}
+\begin{enumerate}
+  % Equation 49
+  \item $\int \limits \sinh u du = \cosh u +C$
+  % Equation 50
+  \item $\int \limits \cosh u du = \sinh u +C$
+  \item $\int \limits \tanh u du = \ln \cosh u +C$
+  \item $\int \limits \coth u du = \ln | \sinh u | +C$
+  \item $\int \limits \text{sech } u du = \tan ^{-1} | \sinh u | +C$
+  \item $\int \limits \text{csch } u du = \ln | \tanh \frac{1}{2} u | +C$
+  % Equation 55
+  \item $\int \limits \text{sech } ^2 u du = \tanh u +C$
+  \item $\int \limits \text{csch } ^2 u du = -\coth u +C$
+  \item $\int \limits \text{sech } u \tanh u du = - \text{sech } u +C$
+  \item $\int \limits \text{csch } u \text{coth } u du = -\text{csch } u +C$
+\end{enumerate}
+
+\section{Inverse Trigonometric Integrals}
+\begin{enumerate}
+  % Equation 59
+  \item $\int \limits \sin ^{-1} u du = u \sin ^{-1} u + \sqrt{1-u^2} +C$
+  % Equation 60
+  \item $\int \limits \cos ^{-1} u du = u \cos ^{-1} u - \sqrt{1-u^2} +C$
+  \item $\int \limits \tan ^{-1} u du = u \tan ^{-1} - \frac{1}{2} \ln (1+u^2) +C$
+  \item $\int \limits u \sin ^{-1} u du = \frac{2u^2-1}{4} \sin ^{-1} u + \frac{u\sqrt{1-u^2}}{4} +C$
+  \item $\int \limits u \cos ^{-1} u du = \frac{2u^1-1}{4} \cos ^{-1} u - \frac{u\sqrt{1-u^2}}{4} +C$
+  \item $\int \limits u \tan ^{-1} u du = \frac{u^2+1}{2} \tan^{-1} u -\frac{u}{2} +C$
+  % Equation 65
+  \item $\int \limits u^n \sin ^{-1} u du = \frac{1}{n+1} \Big[ u^{n+1} \sin ^{-1} u - \int \limits \frac{u^{n+1} du}{\sqrt{1-u^2}}\Big], n \neq 1$
+  \item $\int \limits u^n \cos ^{-1} u du = \frac{1}{n+1} \Big[ u^{n+1} \cos ^{-1} u - \int \limits \frac{u^{n+1} du}{\sqrt{1-u^2}}\Big], n \neq 1$
+  \item $\int \limits u^n \tan ^{-1} u du = \frac{1}{n+1} \Big[ u^{n+1} \tan ^{-1} u - \int \limits \frac{u^{n+1}}{1+u^2}\Big], n \neq -1$
+\end{enumerate}
+
+\section{Integrals Involving $a^2+u^2, a>0$}
+\begin{enumerate}
+  % Equation 68
+  \item $\int \limits \sqrt{a^2 + u^2} du = \frac{u}{2} \sqrt{a^2 + u^2} + \frac{a^2}{2} \ln (u + \sqrt{a^2 + u^2}) +C$
+  \item $u^2 \int \limits \sqrt{a^2 + u^2} du = \frac{u}{8} (a^2 + 2u^2) \sqrt{a^2 + u^2} - \frac{a^4}{8} \ln (u + \sqrt{a^2 + u^2}) + C$
+  % Equation 70
+  \item $\int \limits \frac{\sqrt{a^2+u^2}}{u} du = \sqrt{a^2 + u^2} - a\ln \Big| \frac{a+\sqrt{a^2 + u^2}}{u} \Big| +C$
+\end{enumerate}
+
+\pagebreak
+
+\section{Additional Resources}
+\textbf{Textbook}\\
+Text: \url{https://openstax.org/details/books/calculus-volume-2}\\
+\\
+\textbf{Print}\\
+Calculus Study Guide: \url{https://mt-jfk.com/ap-calculus-study-guide.pdf}\\
+\\
+\textbf{Video}\\
+The Organic Chemistry Tutor: \url{https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA}\\
+Black Pen Red Pen: \url{https://www.youtube.com/user/blackpenredpen}\\
+Khan Academy: \url{https://www.youtube.com/c/khanacademy}\\
+\\
+\textbf{Websites}\\
+Khan Academy - AP/College Calculus BC: \url{https://www.khanacademy.org/math/ap-calculus-bc}
+
+\end{document}

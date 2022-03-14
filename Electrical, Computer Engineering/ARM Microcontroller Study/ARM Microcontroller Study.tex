@@ -1,0 +1,180 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}   %For page Setup
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+%\usepackage{circuitikz}                     %For Adding Circuits (General)
+\usepackage[siunitx]{circuitikz}            %For Adding Circuits with Labels
+
+\title{Notes: Introduction to ARM Cortex $^{\text{TM}}$-M Microcontrollers}
+\author{K}
+\date{November 1, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+
+
+\begin{document}
+
+\begin{comment}
+\begin{titlepage}
+    %\titlepage
+    \maketitle
+\end{titlepage}
+\end{comment}
+
+\maketitle
+
+\tableofcontents{}
+\pagebreak
+
+\section{Introduction to Computer Electronics}
+\subsection{Review of Electronics}
+
+\begin{gather*}
+  V=\text{Voltage (Volts)}, I=\text{Current (Amperes)}, R=\text{Resistance (Ohms/$\Omega$)}\\
+  V=IR, ~I=\frac{V}{R}, ~R=\frac{V}{I}
+\end{gather*}
+\begin{itemize}
+  \item Voltage
+  \begin{itemize}
+    \item potential to cause current to flow, measured between two places
+    \item has polarity
+  \end{itemize}
+
+  \item Current
+  \begin{itemize}
+    \item has direction
+  \end{itemize}
+
+  \item If the electron flow has stopped resistance is infinite, no electrons flow
+  \item If electrons flow freely, resistance is not zero, but some finite amount
+  \item As resistance varies so does current
+  \item potential is defined as the voltage difference between two places
+
+  \item current/Flow has direction
+  \begin{itemize}
+    \item Low resistance, High current
+    \item High resistance, Low current
+    \item Example: Temperature Movement
+    \begin{itemize}
+      \item $\text{Flow} = \frac{T_1-T_2}{\text{Resistance}}$
+      \item $T$ = Temperature
+    \end{itemize}
+  \end{itemize}
+
+  \item R-Value
+  \begin{itemize}
+    \item used in insulation put in walls and ceiling of a house
+    \item given in units per square area, e.g. $m^2\cdot ^{\circ} C/w$
+    \item amount of heat flow across a wall:
+    \begin{itemize}
+      \item $\text{Flow} = \frac{\text{Area}\cdot (T_1-T_2)}{\text{R-Value}}$
+      \item $T$ = Temperature
+    \end{itemize}
+  \end{itemize}
+
+  \item Power
+  \begin{itemize}
+    \item $P$ in watts
+    \item does not have power or direction
+    \begin{gather*}
+      \text{$P$=Power(watts), $V$=Voltage(Volts), $I$=Current(Amperes)}\\
+      P=VI, ~P=\frac{V^2}{R}, ~P=I^2 \cdot R
+    \end{gather*}
+  \end{itemize}
+
+  \item Energy
+  \begin{itemize}
+    \item $E$ in joules
+    \item stored in a battery
+    \item has neither polarity or direction
+    \begin{gather*}
+      \text{$E$ = Energy(Joules), $V$ = Voltage(Voltage), $I$ = Current(Amperes), $t$ =time(seconds)}\\
+      E=VIt, ~E=Pt
+    \end{gather*}
+  \end{itemize}
+
+  \item Switch
+  \begin{itemize}
+    \item used to modify the behavior of a circuit
+    \item ON
+    \begin{itemize}
+      \item closed, resistance is 0, current flows
+      \item resistance of a switch is less than 0.1$\Omega$, assume 0 in most cases
+    \end{itemize}
+    \item OFF
+    \begin{itemize}
+      \item open, resistance is $\infty$, no current will flow
+      \item resistance if greater than 100M$\Omega$, close to $\infty$ therefore assume $\infty$
+    \end{itemize}
+  \end{itemize}
+
+  \item Rules for solving voltages and currents in a circuit compromised with batteries, switches, and resistors
+  \begin{itemize}
+    \item \textbf{Current always flows in a loop}
+    \begin{itemize}
+      \item When there is no loop, no current can flow
+    \end{itemize}
+    \item \textbf{Kirchoff's Voltage Law (KVL)}
+    \begin{itemize}
+      \item The sum of the voltages around the loop is zero
+    \end{itemize}
+    \item \textbf{Kirchoff's Current Law (KCL)}
+    \begin{itemize}
+      \item The sum of the currents into a node equal the sum of the currents leaving a node
+    \end{itemize}
+    \item \textbf{Observation:} If at all possible, draw the circuit so curruent flows down across the resistors and switches. As a secondary rule have currents go left to right across resistors and switches.
+
+    \item \textbf{Series Resistance}
+    \begin{itemize}
+      \item If resistor $R1$ is in series with resistor $R2$, this combination behaves like one resistor with a value equal to $R1 + R2$
+      \item $V$ equals $V1 + V2$
+      \item By KCL currents through the two resistors are the same
+    \end{itemize}
+
+    \item \textbf{Voltage Divider Rule}
+      \begin{itemize}
+        \item \begin{align*}
+          V2 &= I \cdot R2\\
+          &= (V/R) \cdot R2\\
+          &= V*R2/(R1 + R2)
+        \end{align*}
+        \item The following are equivalent:\\
+          \begin{circuitikz}  \draw
+            (0,0) to[R, R=$R1$, V_=$V1$] (0,2)
+              to[R, R=$R1$, V_=$V1$] (0,4)
+            (4,0) to[R, R=$R1+R2$, V_=$V1+V2$] (4,4)
+            ;
+          \end{circuitikz}
+      \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\begin{circuitikz}[scale=2]  \draw
+  (0,0) to[battery] (0,4)
+    to[ammeter, i_=2<\milli\ampere>] (4,4)
+    to[C=3<\farad>] (4,0) -- (3.5,0)
+    to[lamp,*-*] (0.5,0) -- (0,0)
+  (0.5,0) -- (0.5,-2)
+    to[voltmeter, l=3<\kilo\volt>, color=red] (3.5,-2) -- (3.5,0)
+  ;
+\end{circuitikz}
+
+\end{document}
