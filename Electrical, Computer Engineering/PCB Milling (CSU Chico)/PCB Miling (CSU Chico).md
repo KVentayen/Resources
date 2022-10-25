@@ -17,6 +17,12 @@ This space is designated for Markdown resources:
     This is a multiline comment
 -->
 
+# Downloading Software
+- Here is the general site for downloading the software: https://www.bantamtools.com/software-download
+    - Remember to download the **Legacy Software** because the newer software is not compatable with the device
+    - **Mac OS Download:** https://software-download.bantamtools.com/BantamTools-1.2.3.dmg
+    - **Windows Download:** https://software-download.bantamtools.com/BantamTools-1.2.3.msi
+
 # PCB Milling Machine Notes
 ## Details
 - Model: Bantam Tools $^\text{TM}$ Desktop PCB Milling Machine
