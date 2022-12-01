@@ -17,6 +17,15 @@ This space is designated for Markdown resources:
     This is a multiline comment
 -->
 
+# Resources from LinkedIn Learning
+## Learning FPGA Development
+General course to understand what FPGA Development is.
+https://www.linkedin.com/learning/learning-fpga-development?u=57692737
+
+## Learning Verilog for FPGA Development
+Course for learning how to develop using Verilog.
+https://www.linkedin.com/learning/learning-verilog-for-fpga-development?u=57692737
+
 # Resources from Devin
 
 Video for explaining Hardware Description Languages:
@@ -34,4 +43,3 @@ Resources for writing any System Verilog Code:
 https://www.chipverify.com/systemverilog/systemverilog-tutorial
 
 https://verificationguide.com/systemverilog/systemverilog-tutorial/
-
