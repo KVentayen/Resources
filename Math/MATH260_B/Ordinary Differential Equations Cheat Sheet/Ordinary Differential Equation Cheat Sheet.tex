@@ -1,0 +1,177 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}   %For page Setup
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\usepackage{stmaryrd}					%Font Package for Math Mode
+\epstopdfsetup{update}
+
+\title{Ordinary Differential Equations Reference Sheet}
+\author{User K}
+\date{September 19, 2022}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+
+
+\begin{document}
+
+\begin{comment}
+\begin{titlepage}
+    %\titlepage
+    \maketitle
+\end{titlepage}
+\end{comment}
+
+\maketitle
+
+
+\tableofcontents{}
+\section{Table of Integrals}
+
+\subsection{Table of Laplace Transforms}
+This table summarizes the general properties of Laplace transforms and the Laplace transforms of particular functions derived in Chapter 4.
+
+\begin{center}
+	\begin{tabular}{c c c c}
+	Function & Transform & Function & Transform\\
+	\hline
+	$f(t)$ & $F(s)$ & $e^{at}$ & $\frac{1}{s-a}$\\
+	$af(t) + bg(t)$ & $aF(s) + bG(s)$ & $t^n e^{at}$ & $\frac{n^!}{(s-a)^{n+1}}$\\
+	$f'(t)$ & $sF(s) - f(0)$ & $\cos kt$ & $\frac{s}{s^2 + k^2}$\\
+	$f''(t)$ & $s^2 F(s)-sf(0)-f'(0)$ & $\sin kt$ & $\frac{s}{s^2-k^2}$\\
+	$f^{(n)} (t)$ & $s^nF(s) - s^{n-1}f(0)- \cdots -f^{(n-1)}(0)$ & $\cosh kt$ & $\frac{s}{s^2-k^2}$\\
+	$\int \limits _0^t f(\tau) d\tau$ & $\frac{F(s)}{s}$ & $\sinh kt$ & $\frac{k}{s^2-k^2}$\\
+	$e^{at}f(t)$ & $F(s-a)$ & $e^{at} \cos kt$ & $\frac{s-a}{(s-a)^2 + k^2}$\\
+	$u(t-a)f(t-a)$ & $e^{-as}F(s)$ & $e^{at} \sin kt$ & $\frac{k}{(s-a)^2 + k^2}$\\
+	$\int \limits _0^t f(t)g(t-\tau) d\tau$ & $F(s)G(s)$ & $\frac{1}{2k^3} (\sin kt - kt \cos kt)$ & $\frac{1}{(s^2 + k^2)^2}$\\
+	$tf(t)$ & $-F'(s)$ & $\frac{t}{2k} \sin kt$ & $\frac{s}{(s^2+k^2)^2}$\\
+	$t^nf(t)$ & $(-1)^n F^{(n)}(s)$ & $\frac{1}{2k} (\sin kt + kt \cos kt)$ & $\frac{s^2}{(s^2 + k^2)^2}$\\
+	$\frac{f(t)}{t}$ & $\int \limits _s^\infty F(\sigma) d\sigma$ & $u(t-a)$ & $\frac{e^{-as}}{s}$\\
+	$f(t), \text{ period } p$ & $\frac{1}{1-e^{-ps}} \int \limits _0^p e^{-st} f(t) dt$ & $\delta(t-a)$ & $e^{-as}$\\
+	$1$ & $\frac{1}{s}$ & $(-1)^{\llbracket t / a \rrbracket}$ (square wave) & $\frac{1}{s} \tanh \frac{as}{2}$\\
+	$t$ & $\frac{1}{s^2}$ & $\llbracket \frac{t}{a} \rrbracket$ (staircase) & $\frac{e^{-as}}{s(1-e^{-as})}$\\
+	$t^n$ & $\frac{n!}{s^{n+1}}$\\
+	$\frac{1}{\sqrt{\pi t}}$ & $\frac{1}{\sqrt{s}}$\\
+	$t^a$ & $\frac{\Gamma (a+1)}{s^{a+1}}$\\
+	\hline
+	\end{tabular}
+\end{center}
+
+\subsection{ELEMENTARY FORMS}
+\begin{enumerate}
+	\item $\int \limits u dv = u v - \int \limits v du$
+	\item $\int \limits u^n du = \frac{1}{n+1} u^{n+1} + C \text{ if } n \neq -1$
+	\item $\int \limits \frac{du}{u} = ln|u| + C$
+	\item $\int \limits e^u du = e^u + C$
+	\item $\int \limits a^u du = \frac{a^u}{\ln a} + C$
+	\item $\int \limits \sin u du = -\cos u + C$
+	\item $\int \limits \cos u du = \sin u + C$
+	\item $\int \limits \sec ^2 u du = \tan u + C$
+	\item $\int \limits \csc ^2 u du = -\cot u + C$
+	\item $\int \limits \sec u \tan u du = \sec u + C$
+	\item $\int \limits \csc u \cot u du = -\csc u + C$
+	\item $\int \limits \tan u du = \ln | \sec u | + C$
+	\item $\int \limits \cot u du = \ln | \sin u | + C$
+	\item $\int \limits \sec u du = \ln | \sec u + \tan u | + C$
+	\item $\int \limits \csc u du = \ln | \csc u - \cot u | + C$
+	\item $\int \limits \frac{du}{\sqrt{a^2 + u^2}} = \sin^{-1} \frac{u}{a} + C$
+	\item $\int \limits \frac{du}{a^2 + u^2} = \frac{1}{a} \tan^{-1} \frac{u}{a} + C$
+	\item $\int \limits \frac{du}{a^2 - u^2} = \frac{1}{2a} \ln | \frac{u + a}{u - a} | + C$
+\end{enumerate}
+
+\subsection{TRIGONOMETRIC FORMS}
+\begin{enumerate}
+	\setcounter{enumi}{18}
+	\item $\int \limits \sin ^2 u du = \frac{1}{2} u - \frac{1}{4} \sin 2u + C$
+	\item $\int \limits \cos ^2 u du = \frac{1}{2} u + \frac{1}{4} \sin 2u + C$
+	\item $\int \limits \tan ^2 u du = \tan u - u + C$
+	\item $\int \limits \cot ^2 u du = -\cot u - u + C$
+	\item $\int \limits \sin ^3 u du = -\frac{1}{3} (2 + \sin ^2 u) \cos u + C$
+	\item $\int \limits \cos ^3 u du = \frac{1}{3} (2 + \cos ^2 u) \sin u + C$
+	\item $\int \limits \tan ^3 u du = \frac{1}{2} \tan ^2 u + \ln | \cos u | + C$
+	\item $\int \limits \cot ^3 u du = -\frac{1}{2} \cot ^2 u - \ln | \sin u | + C$
+	\item $\int \limits \sec ^3 u du = \frac{1}{2} \sec u \tan u + \frac{1}{2} \ln | \sec u + \tan u | + C$
+	\item $\int \limits \csc ^3 u du = -\frac{1}{2} \csc u \cot u + \frac{1}{2} \ln | \csc u - \cot u | + C$
+	\item $\int \limits \sin a u \sin bu du = \frac{sin(a-b)u}{2(a-b)} - \frac{sin(a+b)u}{2(a+b)} + C \text{ if } a^2 \neq b^2$
+	\item $\int \limits \cos au \cos bu du = \frac{\sin (a-b) u}{2(a-b)} + \frac{\sin (a+b) u}{2(a+b)} C \text{ if } a^2 \neq b^2$
+	\item $\int \limits \sin au \cos bu du = -\frac{\cos (a-b) u}{2(a-b)} - \frac{\cos (a+b) u}{2(a+b)} + C \text{ if } a^2 \neq b^2$
+	\item $\int \limits \sin ^n u du = -\frac{1}{n} \sin ^{n-1} u \cos u + \frac{n-1}{n} \int \limits \sin ^{n-2} u du$
+	\item $\int \limits \cos ^n u du = \frac{1}{n} \cos ^{n-1} u \sin u + \frac{n-1}{n} \int \limits \cos ^{n-2} u du$
+	\item $\int \limits tan ^n u du = \frac{1}{n-1} \tan ^{n-1} u - \int \limits \tan ^{n-2} u du \text{ if } n \neq 1$
+	\item $\int \limits \cot ^n u du = -\frac{1}{n-1} \cot ^{n-1} u - \int \limits \cot ^{n-2} u du \text{ if } n \neq 1$
+	\item $\int \limits \sec ^ n u du = \frac{1}{n-1} \sec ^{n-2} u \tan u + \frac{n-2}{n-1} \int \limits \sec ^{n-2} u du \text{ if } n \neq 1$
+	\item $\int \limits \csc ^n u du = - \frac{1}{n-1} \csc ^{n-2} u \cot u + \frac{n-2}{n-1} \int \limits \csc ^{n-2} u du \text{ if } n \neq 1$
+	\item $\int \limits u \sin u du = \sin u - u \cos u + C$
+	\item $\int \limits u \cos u du = cos u + u sin u + C$
+	\item $\int \limits u ^n \sin u du = -u ^n \cos u + n \int \limits u ^{n-1} \cos u du$
+	\item $\int \limits u^n \cos u - n \int \limits u ^{n-1} \sin u du$
+\end{enumerate}
+
+\subsection{FORMS INVOLVING $\sqrt{u^2 \pm a^2}$ }
+\begin{enumerate}
+	\setcounter{enumi}{41}
+	\item $\int \limits \sqrt{u^2 \pm a^2} du = \frac{u}{2} \sqrt{u^2 \pm a^2} \pm \frac{a^2}{2} \ln | u + \sqrt{u^2 \pm a^2} | + C$
+	\item $\int \limits \frac{du}{\sqrt{u^2 \pm a^2}} = \ln | u + \sqrt{u^2 \pm a^2} | + C$
+\end{enumerate}
+
+\subsection{FORMS INVOLVING $\sqrt{a^2 - u^2}$}
+\begin{enumerate}
+	\setcounter{enumi}{43}
+	\item $\int \limits \sqrt{a^2 - u^2} du = \frac{u}{2} \sqrt{a^2 - u^2} + \frac{a^2}{2} \sin ^{-1} \frac{u}{a} + C$
+	\item $\int \limits \frac{\sqrt{a^2 - u^2}}{u} du = \sqrt{a^2 - u^2} - a \ln | \frac{a + \sqrt{a^2 - u^2}}{u} | + C$
+\end{enumerate}
+
+\subsection{EXPONENTIAL AND LOGARITHMIC FORMS}
+\begin{enumerate}
+	\setcounter{enumi}{45}
+	\item $\int \limits u e^u du = (u-1) e^u + C$
+	\item $\int \limits u^n e^u du = u^n e^u - n \int \limits u^{n-1} e^u du$
+	\item $\int \limits u^n \ln u du = \frac{u^{n+1}}{n+1} \ln u - \frac{u^{n+1}}{(n+1)^2} + C$
+	\item $\int \limits e^{au} \sin bu du = \frac{e^{au}}{a^2 + b^2} (a \sin bu - b \cos bu) + C$
+	\item $\int \limits e^{au} \cos bu du = \frac{e^{au}}{a^2 + b^2} (a \cos bu + b \sin bu) + C$
+\end{enumerate}
+
+\subsection{INVERSE TRIGONOMETRIC FORMS}
+\begin{enumerate}
+	\setcounter{enumi}{50}
+	\item $\int \limits \sin^{-1} u du = u \sin ^{-1} u + \sqrt{1-u^2} + C$
+	\item $\int \limits \tan^{-1} u du = u \tan ^{-1} u -\frac{1}{2} \ln (1 + u^2) + C$
+	\item $\int \limits \sec^{-1} u du = u \sec^{-1} u - \ln | u + \sqrt{u^2-1} | + C$
+	\item $\int \limits u \sin^{-1} u du = \frac{1}{4} (2u^2-1) \sin^{-1} u + \frac{u}{4} \sqrt{1-u^2} + C$
+	\item $\int \limits u \tan^{-1} u du = \frac{1}{2} (u^2+1) \tan^{-1} u - \frac{u}{2} + C$
+	\item $\int \limits u \sec^{-1} u du = \frac{u^2}{2} \sec^{-1} u - \frac{1}{2} \sqrt{u^2-1} + C$
+	\item $\int \limits u^n \sin^{-1} u du = \frac{u^{n+1}}{n+1} \sin^{-1} u - \frac{1}{n+1} \int \limits \frac{u^{n+1}}{\sqrt{1-u^2}} du \text{ if } n \neq -1$
+	\item $\int \limits u^n \tan^{-1} u du = \frac{u^{n+1}}{n+1} \tan^{-1} u - \frac{1}{n+1} \int \limits \frac{u^{n+1}}{1+u^2} du \text{ if } n \neq -1$
+	\item $\int \limits u^n \sec^{-1} u du = \frac{u^{n+1}}{n+1} \sec^{-1} u - \frac{1}{n+1} \int \limits \frac{u^{n+1}}{\sqrt{u^2-1}} du \text{ if } n \neq -1$
+\end{enumerate}
+
+\subsection{OTHER USEFUL FORMULAS}
+\begin{enumerate}
+	\setcounter{enumi}{59}
+	\item $\int \limits_{0}^{\infty} u^n e^{-u} du = \Gamma (n+1) = n! \text{~~~~~} (n \geqq 0)$
+	\item $\int \limits_{0}^{\infty} e^{-au^2} du = \frac{1}{2} \sqrt{\frac{\pi}{a}} \text{~~~~~} (a>0)$
+	\item $\int \limits_{0}^{\pi / 2} \sin^n u du = \int \limits_{0}^{\pi / 2} \cos^n u du =
+		\begin{cases}
+		\frac{1 \cdot 3 \cdot 5 \cdots (n-1)}{2 \cdot 4 \cdot 6 \cdots n} \cdot \frac{\pi}{2} \text{~~~~~if } n \text{ is an even integer and } n \geqq 2\\
+		\frac{2 \cdot 4 \cdot 6 \cdots (n-1)}{3 \cdot 5 \cdot 7 \cdots n} \text{~~~~~if } n \text{ is an odd integer and } n \geqq 3
+		\end{cases}
+	$
+\end{enumerate}
+
+\end{document}

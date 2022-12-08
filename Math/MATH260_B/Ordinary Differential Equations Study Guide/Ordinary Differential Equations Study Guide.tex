@@ -1,0 +1,423 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}   %For page Setup
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\epstopdfsetup{update}
+
+\title{Math Notes}
+\author{K}
+\date{March 6, 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+
+
+\begin{document}
+
+\begin{comment}
+\begin{titlepage}
+    %\titlepage
+    \maketitle
+\end{titlepage}
+\end{comment}
+
+\maketitle
+
+\tableofcontents{}
+\section{First Order Differential Equations}
+\subsection{Separable Differential Equations}
+
+\begin{align*}
+\frac{dy}{dx} &= G(x) \cdot H(y) \Bigm\lvert \cdot dx\\
+dy &= G(x) \cdot H(y) dx \Bigm\lvert \cdot \frac{1}{H(y)}\\
+\frac{dy}{H(y)} &= G(x) dx\\
+\int \limits \frac{dy}{H(y)} &= \int \limits G(x) dx\\
+h(y) + C_1 &= g(x) + C_2\\
+h(y) &= g(x) + C
+\end{align*}
+
+\textbf{Example}
+\begin{align*}
+\frac{dy}{dx} &= y \sin x\\
+dy &= y \sin x (dx)\\
+\frac{dy}{y} &= \sin x dx\\
+\int \limits y^{-1} dy &= \int \limits \sin x dx\\
+\ln |y| + C &= -\cos x + C\\
+\ln |y| &= -\cos x + C\\
+y &= e^{-\cos x + C}\\
+&= e^{-\cos x}e^C\\
+&= \frac{1}{e^{\cos x}} \cdot e^C\\
+&= \frac{e^C}{e^{\cos x}}\\
+& ~~~~~ D = e^C\\
+&= \frac{D}{e^{\cos x}}
+\end{align*}
+
+\subsection{Linear First Order Differential Equations Homogeneous Differential Equation}
+% KIR: Needs Example
+
+$y'(x) + p(x)y(x) = q(x)$\\
+$~~~~~$ $p(x)$, $q(x)$ given $q(x)=0$, then $y'+p(x)y = 0$
+
+\begin{itemize}
+	\item Linear because all terms are to the power of 1
+\end{itemize}
+
+\begin{align*}
+y'+y^2 = 0 &\rightarrow \text{non-linear}\\
+y'+y = 0 &\rightarrow \text{linear}
+\end{align*}
+
+\subsection{Method of Integrating Factor}
+$\rho = e^{\int \limits p(x) dx}$
+
+\begin{align*}
+y'e^{\int \limits p(x) dx} + P(x)ye^{\int \limits p(x) dx} &= q(x)e^{\int \limits p(x) dx}\\
+\frac{d}{dx}(y \cdot e^{\int \limits p(x) dx}) &= y'e^{\int \limits p(x) dx} \cdot \frac{d}{dx} (\int \limits p(x) dx)\\
+&= y'e^{\int \limits p(x) dx} + ye^{\int \limits p(x) dx} p(x)\\
+\frac{d}{dx}(y \cdot e^{\int \limits p(x) dx}) &= q(x) \cdot e^{\int \limits p(x) dx} \Bigm\lvert \cdot dx \int \limits\\
+\int \limits \frac{d}{dx} (ye^{\int \limits p(x) dx})dx &= \int \limits q(x) \cdot e^{\int \limits p(x) dx}\\
+y \cdot e^{\int \limits p(x) dx} &= \int \limits (q(x) e^{\int \limits p(x) dx})dy + e  \cdot \frac{1}{e^{\int \limits p(x) dx}}\\
+y &= (\int \limits (q(x) \cdot e^{\int \limits p(x) dx})dx + C)e^{-\int \limits p(x) dx}
+\end{align*}
+
+\subsubsection{Method of Substitution}
+\begin{enumerate}
+	\item
+\begin{align*}
+y' &= f(ax + by + c)\\
+&a, b, c \text{given constants}\\
+&f \text{given functions}\\
+u &= ax + by + c\\
+\frac{du}{dy} &= \frac{d}{dx}(ax+by+c)\\
+\frac{du}{dy} &= a +b\frac{dy}{dx} + 0\\
+&\rightarrow \frac{dy}{dx} = \frac{\frac{du}{dx}-a}{b}\\
+\frac{\frac{du}{dx}-a}{b} &= f(u)\\
+\frac{du}{dx} &= bf(u)+a \Bigm \lvert \cdot dx\\
+du &= (bf(u) + a)dx\\
+\frac{du}{bf(u) + a} &= dx\\
+\int \limits \frac{du}{bf(u) + a} &= \int \limits dx\\
+F(u) &= x+C\\
+F(ax+by+C) &= x + C
+\end{align*}
+
+\textbf{Example}
+\begin{align*}
+\frac{dy}{dx} &= (x+y+3)^2\\
+u &= x+y+3\\
+\frac{du}{dx} &= \frac{d}{dx}(x+y+3)\\
+\frac{du}{dx} &= 1 + \frac{dy}{dx}\\
+\frac{dy}{dx} &= \frac{du}{dx} - 1\\
+\frac{du}{dx} - 1 &= (u)^2\\
+\frac{du}{dx} &= 1 + (u)^2 \Bigm \lvert \cdot dx\\
+du &= (1+u^2)dx \Bigm \lvert \frac{1}{1+u^2}\\
+\frac{du}{1+u^2} &= dx\\
+\int \limits \frac{du}{1+u^2} &= \int \limits dx\\
+\tan^{-1} u &= x+C\\
+\tan(\tan^{-1} u) &= \tan(x+C)\\
+u &= \tan(x+C),& x+y+3 &= \tan(x+C)\\
+y &= \tan(x+C)-x-3
+\end{align*}
+
+\item
+\begin{align*}
+y' &= f(\frac{y}{x})\\
+u &= \frac{y}{x}, y = u \cdot x, \frac{dy}{dx} = \frac{du}{dx} x + 1 \cdot u\\
+\frac{du}{dx} \cdot x + u &= f(u) \rightarrow \frac{du}{dx} x = f(u)-u \Bigm \lvert \cdot dx\\
+du \cdot x &= (f(u)-u)dx \Bigm \lvert \frac{1}{x(f(u)-u)}\\
+\frac{du}{f(u)-u} &= \frac{dy}{x}\\
+F(u) &= \ln|x|+C\\
+F(\frac{y}{x}) &= \ln|x|+C
+\end{align*}
+
+\begin{align*}
+2xy \frac{dy}{dx} &= 4x^2 + 3y^2\\
+2xy \frac{dy}{dx} &= 4x^2 + 3y^2 \Bigm \lvert \frac{1}{x^2}\\
+2 \frac{y}{x} \cdot \frac{dy}{dx} &= 4 + 3(\frac{y}{x})^2\\
+\frac{dy}{dx} &= \frac{4+3 (\frac{y}{x})}{2(\frac{y}{x})}\\
+u &= \frac{y}{x}, y = u \cdot x, \frac{dy}{dx}=\frac{du}{dx}x+u\\
+\frac{du}{dx} &= \frac{4+3u^2}{2u} -u\\
+&= \frac{4+3u^2-2u^2}{2u}\\
+&= \frac{4+u^2}{2u}\\
+x \cdot \frac{du}{dx} &= \frac{4+u^2}{2u} \Bigm \lvert \cdot dx\\
+x \cdot du &= \frac{4+u^2}{2u} \cdot dx \Bigm \lvert \cdot \frac{1}{x\cdot \frac{4\cdot u^2}{2u}}\\
+\int \limits \frac{2u}{4+u^2} du &= \int \limits \frac{dx}{x}\\
+&~~~~~ z=4+u^2\\
+&~~~~~ dz=2udu\\
+\int \limits \frac{dz}{z} &= \int \limits \frac{dx}{x}\\
+\ln|z| &= \ln|x| + C\\
+e^{\ln|z|} &= e^{\ln|x|+C} = e^{\ln|x|}e^{C}\\
+|z| &= |x|e^C\\
+z &= e^C \cdot x=\pm e^C \cdot x\\
+&~~~~~ A=\pm e^C\\
+z &= Ax\\
+4+u^2 &= Ax\\
+4+(\frac{y}{x})^2 &= Ax ~~~~~ (\text{general solution})\\
+(\frac{y}{x})^2 &= Ax-4\\
+\frac{y}{x} &= \pm \sqrt{Ax-4}\\
+y &= \pm x \sqrt{Ax-4} ~~~~~ (\text{explicit form})
+\end{align*}
+\end{enumerate}
+
+Two Types of U-Substitution
+\begin{enumerate}
+	\item $y' = f(ax+by+c)$
+	\item $y' = f(\frac{x}{y}$
+\end{enumerate}
+
+\subsection{Exact Equations}
+\begin{align*}
+dF &= M(x,y)dx +N(x,y)dy =0\\
+&~~~~~ dF(x,y) = 0\\
+dF(x,y) &= 0\\
+dF &= \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy = 0\\
+[\frac{\partial F}{\partial x} = N(x,y)] & [\frac{\partial F}{\partial y} = M(x,y)]\\
+\frac{\partial}{\partial y} [\frac{\partial F}{\partial x} = N(x,y)], & \frac{\partial}{\partial x} [\frac{\partial F}{\partial y} = M(x,y)]\\
+\frac{\partial^2 F}{\partial y dx} = \frac{\partial N}{\partial y}, & \frac{\partial^2 F}{dx dy} = \frac{\partial M}{\partial x}\\
+\frac{\partial M}{\partial x} &= \frac{\partial N}{\partial y}\\
+\\
+\frac{\partial F}{\partial x} &= N \Bigm \lvert \cdot dx \int \limits\\
+\int \limits \frac{\partial F}{\partial x} &= \int \limits N(x,y) dx\\
+F(x,y) &= \int \limits N(x,y)dx + g(y)\\
+\frac{\partial F}{\partial y} &= \frac{\partial}{\partial y} \int \limits N(x,y) dx + g'(y) = M(x,y)\\
+\Rightarrow g(y)\\
+F(x,y) &= \int \limits N(x,y)dx + g(y)\\
+&(\text{equation from earlier step})
+\end{align*}
+
+\textbf{Example}
+\begin{align*}
+(6xy-y^3)dx + (4y+3x^2-3xy^2)dx &= 0\\
+M(x,y) + N(x,y) &= 0\\
+\frac{\partial M}{\partial y}(6xy - y^3) &= 6x-3y^2\\
+\frac{\partial N}{\partial x} &= \frac{\partial}{\partial x} (4y+3x^2-3xy^2) = 0+6x-3y^2\\
+\\
+dF &= \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy\\
+\\
+\frac{\partial F}{\partial x} &= 6xy-y^3, \frac{\partial F}{\partial y} = 4y+3x^2-3xy^2\\
+\int \limits \frac{\partial F}{\partial x} dx &= \int \limits (6xy-y^3)dx\\
+F(x,y) &= 6\frac{x^2}{2} \cdot y-y^3x+g(y)\\
+\frac{\partial F}{\partial y} &= 3x^2 \cdot 1 - x \cdot 3y^2 + g'(y)\\
+&\text{Remember: } \frac{\partial F}{\partial y} = 4y+3x^2-3xy^2\\
+3x^2-3xy^2+g'(y) &= 4y+3x^2-3xy^2\\
+g'(y) &= 4y\\
+\int \limits g'(y) dy &= \int \limits 4y dy\\
+g(y) &= \frac{4y^2}{2} + C\\
+&\text{Remember: } F(x,y) = 6\frac{x^2}{2} \cdot y-y^3x+g(y)\\
+F(x,y) &= 3x^2 \cdot y -y^3x+2y^2+C\\
+\\
+\int \limits dF &= 0, F(x,y)=C_1\\
+\\
+3x^3y - y^3x + 2y^2 &= C_1\\
+y(x)
+\end{align*}
+
+\section{Bernoulli Equation}
+$y'(x)+P(x)y(x) = Q(x)y^n(x)$\\
+$~~~~~$ $P, Q$-given, $n \neq 1$\\
+\\
+linear $y' + p(x)y = q(x)$ by integrating factor $\rho = e^{\int \limits p(x) dx}$\\
+\\
+dividing by $y^n$ to obtain\\
+\\
+\begin{align*}
+y^{-n}y' + P(x)y^{1-n} &= Q(x)\\
+z &= y^{1-n}, (z(x))' = (y(x)^{1-n})'\\
+\frac{dz}{dx} &= (1-n)y^{1-n-1} \frac{dy}{dx}\\
+&= (1-n) \cdot y^{-n} \frac{dy}{dx}\\
+y^{-n}y'(x) &= \frac{dz}{dx} \cdot \frac{1}{1-n}
+\end{align*}
+
+\textbf{Example}\\
+\begin{align*}
+y'-\frac{3}{2x}y &= \frac{2x}{y}\\
+P(x) &= -\frac{3}{2x}, Q=2x, n=-1\\
+\\
+y'-\frac{3}{2x}y &= \frac{2x}{y} \Bigm \lvert \cdot y\\
+&~~~~~ z=y^{1-n}\\
+yy'-\frac{3}{2x}y^2 &= 2x\\
+z &= y^2, z'(x)=2y \cdot y'(x)\\
+&~~~~~ \rightarrow y \cdot y'(x) = \frac{z(x)}{z}\\
+\\
+\frac{z'(x)}{z} - \frac{3}{2x} z &= 2x\\
+&~~~~~ \rightarrow z'(x) - \frac{3}{2} z = 4x\\
+\\
+\rho &= e^{\frac{-3}{2}dx}\\
+&= e^{-e \ln x}\\
+&= e^{\ln x^{-3}}\\
+&= x^{-3}\\
+\\
+z'(x)-\frac{3}{x}z &= 4x \Bigm \lvert \cdot \rho = x^{-3}\\
+x^{-3} \cdot z'(x) - 3x^{-4} z(x) &= 4x^{-2}\\
+check &\rightarrow \frac{d}{dx} (x^{-3} \cdot z) =4x^{-2} & \frac{d}{dx}(x^{-3}\cdot z) &= z'x^{-3}-3x^{-4}z\\
+& & &= x^{-3}z' + z(-3)\cdot x^{-4}\\
+\int \limits \frac{d}{dx} (x^{-3}z) dx &= \int \limits 4x^{-2} dx\\
+x^{-3}z &= -\frac{4}{x} + C\\
+z &= -4x^2 + Cx^3\\
+\\
+y^2 = 4x^2+Cx^3\\
+y=\pm\sqrt{-4x^2+Cx^3}
+\end{align*}
+
+\section{Second Order Ordinary Differential Equations}
+$F(y'', y', y, x)=0, y=y(x)$\\
+\subsection{Type I} $F(y''(x), y'(x), x)=0$\\
+Function of $x$
+\begin{align*}
+y'(x)=P(x), y''(x) &= (y'(x))'=P'(x)\\
+&\rightarrow F(p'(x), p(x), x) = 0\\
+&\rightarrow p(x) = f(x, C_1)\\
+&~~~~~ y'=f(x, C_1) \Bigm \lvert \cdot dx \int \limits\\
+&\rightarrow \int \limits y'(x) dx = \int \limits f(x, C_1) dx\\
+&~~~~~ y(x) = \int \limits f(x, C_1) dx +C_2
+\end{align*}
+
+\textbf{Example}\\
+\begin{align*}
+xy''+2y' &= 6x, y(x)=?\\
+xp'(x)+2p &= 6x\\
+\\
+y'+p(x)y &= q(x) \Bigm \lvert &\cdot \rho &= e^{\int \limits \frac{2}{x} dx}\\
+& & &= e^{2 \ln x}\\
+& & &= x^2\\
+p'(x)x^2 + \frac{2x^2}{x}p(x) &= 6x^2\\
+\frac{d}{dx} (x^2 \cdot p(x)) &= p'(x)x^2 +2xp\\
+& \rho \cdot p(x)\\
+\frac{d}{dx} (p(x), y(x)) &= (p(x), y(x))'\\
+\frac{d}{dx} (x^2 \cdot p(x)) &= 6x^2 \Bigm \lvert \cdot dx \int \limits\\
+\int \limits \frac{d}{dx} (x^2 \cdot p(x)) dx &= \int \limits 6x^2 dx\\
+x^2p &= \frac{6x^2}{3} +C,& p(x) &= 2x + \frac{C_1}{x^2}\\
+& & &= y'(x)\\
+&\rightarrow \int \limits y'(x) dx = \int \limits (2x+C_1x^{-2})dx\\
+&~~~~~ y(x) = \frac{2x^2}{2} - \frac{C_1}{y} + C_2
+\end{align*}
+
+\subsection{Type II} $F(y''(x), y'(x), y(x)) = 0$\\
+Function of $y$
+\begin{align*}
+y'(x) = p(y), y'' &= (y'(x))'\\
+&= (P(y))''\\
+&= \frac{dP}{dy} \cdot \frac{dy}{dx}\\
+&= \frac{dp}{dy} p
+\end{align*}
+
+\textbf{Example}
+\begin{align*}
+yy''(x) &= (y'(x))^2\\
+y\frac{dp}{dy} \cdot p &= p^2, p \neq 0\\
+y\frac{dp}{dy},& \frac{dp}{p} = \frac{dy}{y}, \int \limits \frac{dp}{p} = \int \limits \frac{dy}{y}\\
+&\rightarrow \ln|p| = \ln|y| + C_1\\
+&~~~~~ e^{\ln|p|} = e^{\ln|y| + C_1} = e^{\ln|x|} \cdot e^{C_1}\\
+&~~~~~ |p| = |y| \cdot e^{C_1}, p = \pm e^{C_1} \cdot y\\
+&~~~~~~~~~~ A_1 = \pm e^{C_1}\\
+&~~~~~ p=A_1 y\\
+&\rightarrow y'(x) = A_1 y\\
+&~~~~~ \frac{dy}{dx} = A_1 y\\
+&~~~~~ \frac{dy}{y} = A_1 dx\\
+&~~~~~ \int \limits \frac{dy}{y} = \int \limits A_1 dx\\
+&\rightarrow \ln|y| = A_1 x + C_2\\
+&~~~~~ e^{\ln|y|} = e^{A_1 x + C_2}\\
+&~~~~~ |y| = e^{A_1 x} e^{C_2}\\
+&\rightarrow y = \pm e^{C_2}e^{A_1 x}\\
+&~~~~~~~~~~ A_2 = \pm e^{C_2}\\
+&~~~~~ y=A_2 e^{A_1 x}
+\end{align*}
+
+\subsection{Inital Value Problem}
+(1) $\frac{dy}{dx} = f(x,y), y(x_0)=y_0$\\
+\underline{Then} If $f(x,y), \frac{\partial f}{\partial y}$ (continnuous function) on $R[a \leq x \leq b, c \leq y \leq d]$ there exists wuch interval $I \in [a,b]$ also $x_0 \in I$, where the inital value problem (1) has unique solution\\
+\\
+% KIR: Insert Image of Graph Here
+Rectangle (R) is designated by the chosen value (can be very large or small)
+
+\begin{align*}
+y''+p(x)y'+g(x)y &= f(x), x \in (a,b)\\
+p(x), q(x), f(x)& - given y(x)?\\
+y(x_0) = y_0,& y'(x_0)=y_1
+\end{align*}
+\textbf{Theorem 1} if $p(x), q(x), f(x)$\\
+- continuous on $(a, b), x_0 \in (a,b)$ then (2) has unique solution\\
+
+% KIR: MARKER
+
+\section{Complex Roots of Charatistics Equations}
+Imaginary Number $\rightarrow \sqrt{-1} = i$\\
+Complex Number $\rightarrow 3 \pm 4\sqrt{-1} = 3 \pm 4i$\\
+Real Number $\rightarrow \text{Re}[3\pm4i] = 3$\\
+Imaginary Number $\rightarrow \text{Re}[3\pm4i] = \pm4$\\
+\\
+Complex Number Plane\\
+% KIR: Insert an image of the Complex Number Plane
+\\
+\begin{align*}
+ay''+by'+cy &= 0, y = e^{rx}\\
+ar^2+br+c &= 0\\
+r_{1,2} &= \frac{b \pm \sqrt{b^2-4ac}}{2a}, b^2-4ac=0\\
+r &= \alpha \pm i\beta, \sqrt{-1} = i\\
+y_1=e^{(\alpha+i\beta)x} &, y_2=e^{(\alpha-i\beta)x}
+\end{align*}
+
+\subsection{Euler Formula}
+\begin{align*}
+e^{i\beta x} &= \cos(\beta x) + i\sin(\beta x)\\
+e^{-i\beta x} &= \cos(\beta x) - i\sin(\beta x)
+\end{align*}
+
+\begin{align*}
+y_1 &= e^{(\alpha+\beta i)x} &= e^{\alpha x}e^{\beta i}\\
+&= e^{\alpha x} (\cos \beta x + i\sin \beta x)
+\end{align*}
+
+\begin{align*}
+y &= u(x) + iw(x)\\
+a(u+iw)'' + b(u+iw)' + c(u+w) &\equiv 0\\
+(a'' bu + cu) + (aw'' + bw' + cw)i &\equiv 0\\
+0+0 &= 0
+\end{align*}
+
+\begin{align*}
+y_1 = e^{\alpha x} \cos \beta x, y_1 = e^{\alpha x} \sin \beta x\\
+y = C_1 e^{\alpha x} \cos{\beta x} + C_2 e^{\alpha x} \sin \beta x\\
+\end{align*}
+
+\section{Method of Undetermined Coefficients}
+\begin{align*}
+(r^2 + 4)(ar^2 + br + c) &= 0\\
+&\equiv 6r^4 + 5r^3 + 25r^2 + 20r + 4\\
+&\equiv ar^4 + br^3 + cr^2 + 4ar^2 + 4br + 4c\\
+\end{align*}
+
+\begin{align*}
+r^4:& 6 = a\\
+r^3:& 5 = b\\
+r^2:& 25 = c+4a\\
+r:& 20 = 4b\\
+r^0:& 4 = 4C \rightarrow c=1
+\end{align*}
+
+\begin{align*}
+(r^2 + 4)(6r^2 + 5r + 1)=0
+\end{align*}
+
+
+\section{Non-Homogeneous Equation}
+%\subsection{}
+
+%\subsubsection{}
+
+\end{document}

@@ -1,0 +1,82 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[letterpaper, portrait, margin=0.5cm]{geometry}   %For page Setup
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}               %For Equations and Formulas
+\usepackage{comment}                        %For Commenting
+\usepackage{hyperref}                       %For Hyperlinks
+\usepackage{listings}                       %For Coding Examples
+\usepackage[table]{xcolor}                  %For Coloring Tables
+\usepackage{xcolor}                         %For Color Associated with Coding Examples
+\usepackage{multicol}                       %For Making Multiple Columns
+\usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
+\usepackage{stmaryrd}					%Font Package for Math Mode
+\epstopdfsetup{update}
+
+\title{Ordinary Differential Equations Reference Sheet}
+\author{User K}
+\date{September 19, 2022}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\hypersetup{                                %Setup for Hyperlink Colors
+    colorlinks=true,
+    linkcolor=blue,                         %For Hyperlinked Text
+    filecolor=magenta,                      %For Text that Hyperlinks to other Files
+    urlcolor=cyan,                          %For Hyperlinked Printed URLs
+}
+
+
+
+\begin{document}
+
+\begin{comment}
+\begin{titlepage}
+    %\titlepage
+    \maketitle
+\end{titlepage}
+\end{comment}
+
+%\maketitle
+
+
+%\tableofcontents{}
+%\section{Table of Integrals}
+
+% Search Google for Different Font Sizes
+
+%\section{Table of Laplace Transforms}
+%This table summarizes the general properties of Laplace transforms and the Laplace transforms of particular functions derived in Chapter 4.
+
+%\begin{center}
+	\begin{tabular}{c c c c}
+	Function & Transform & Function & Transform\\
+	\hline
+	$f(t)$ & $F(s)$ & $e^{at}$ & $\frac{1}{s-a}$\\
+	$af(t) + bg(t)$ & $aF(s) + bG(s)$ & $t^n e^{at}$ & $\frac{n^!}{(s-a)^{n+1}}$\\
+	$f'(t)$ & $sF(s) - f(0)$ & $\cos kt$ & $\frac{s}{s^2 + k^2}$\\
+	$f''(t)$ & $s^2 F(s)-sf(0)-f'(0)$ & $\sin kt$ & $\frac{s}{s^2-k^2}$\\
+	$f^{(n)} (t)$ & $s^nF(s) - s^{n-1}f(0)- \cdots -f^{(n-1)}(0)$ & $\cosh kt$ & $\frac{s}{s^2-k^2}$\\
+	$\int \limits _0^t f(\tau) d\tau$ & $\frac{F(s)}{s}$ & $\sinh kt$ & $\frac{k}{s^2-k^2}$\\
+	$e^{at}f(t)$ & $F(s-a)$ & $e^{at} \cos kt$ & $\frac{s-a}{(s-a)^2 + k^2}$\\
+	$u(t-a)f(t-a)$ & $e^{-as}F(s)$ & $e^{at} \sin kt$ & $\frac{k}{(s-a)^2 + k^2}$\\
+	$\int \limits _0^t f(t)g(t-\tau) d\tau$ & $F(s)G(s)$ & $\frac{1}{2k^3} (\sin kt - kt \cos kt)$ & $\frac{1}{(s^2 + k^2)^2}$\\
+	$tf(t)$ & $-F'(s)$ & $\frac{t}{2k} \sin kt$ & $\frac{s}{(s^2+k^2)^2}$\\
+	$t^nf(t)$ & $(-1)^n F^{(n)}(s)$ & $\frac{1}{2k} (\sin kt + kt \cos kt)$ & $\frac{s^2}{(s^2 + k^2)^2}$\\
+	$\frac{f(t)}{t}$ & $\int \limits _s^\infty F(\sigma) d\sigma$ & $u(t-a)$ & $\frac{e^{-as}}{s}$\\
+	$f(t), \text{ period } p$ & $\frac{1}{1-e^{-ps}} \int \limits _0^p e^{-st} f(t) dt$ & $\delta(t-a)$ & $e^{-as}$\\
+	$1$ & $\frac{1}{s}$ & $(-1)^{\llbracket t / a \rrbracket}$ (square wave) & $\frac{1}{s} \tanh \frac{as}{2}$\\
+	$t$ & $\frac{1}{s^2}$ & $\llbracket \frac{t}{a} \rrbracket$ (staircase) & $\frac{e^{-as}}{s(1-e^{-as})}$\\
+	$t^n$ & $\frac{n!}{s^{n+1}}$\\
+	$\frac{1}{\sqrt{\pi t}}$ & $\frac{1}{\sqrt{s}}$\\
+	$t^a$ & $\frac{\Gamma (a+1)}{s^{a+1}}$\\
+	\hline
+	\end{tabular}
+%\end{center}
+
+\vfill
+
+{\color{lightgray} Owo, notices your Laplace Transform Table.}
+
+\end{document}
