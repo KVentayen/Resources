@@ -51,6 +51,26 @@
     frame=double                              %set Frame
 }
 
+\lstdefinestyle{blankstyle}{                  %Setup Style for Listings
+    backgroundcolor=\color{white},      %Set Background Color
+    %commentstyle=\color{codegreen},        %Set Comment Style
+    keywordstyle=\color{keyword},           %Set Keyword Style
+    %numberstyle=\tiny\color{codegray},     %Set Number Style
+    %stringstyle=\color{codepurple},        %Set String Style
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=none,                           %Set Line Numbers
+    %numbersep=5pt,                         %Set Line Number Separation
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=none                              %set Frame
+}
+
 \begin{document}
 \maketitle
 \tableofcontents{}
@@ -96,6 +116,10 @@ This can be done as a line or as an environment.
   \item \url{https://www.overleaf.com/learn/latex/Bold%2C_italics_and_underlining}
   \item \url{https://latex-tutorial.com/changing-font-style/}
 \end{itemize}
+
+\subsection{Font Color}
+\url{https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX}
+%KIR: Requires Development
 
 \subsection{Font Sizes}
 \begin{tabular}{c c c}
@@ -298,5 +322,79 @@ return false;
   \item \url{https://www.youtube.com/watch?v=-trhlQToLiU}
   \item \url{https://www.overleaf.com/learn/latex/Code_listing}
 \end{itemize}
+
+\section{Matricies}
+\lstset{style=blankstyle}
+\begin{center}
+	\begin{tabular}{c c c}
+	Type & \LaTeX Markup & Renders As\\
+	\hline
+	Plain & \begin{lstlisting}
+		\begin{matrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{matrix}
+		\end{lstlisting} & $\begin{matrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{matrix}$\\
+	\hline
+	Parentheses; round brackets & \begin{lstlisting}
+		\begin{pmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{pmatrix}
+		\end{lstlisting} & $\begin{pmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{pmatrix}$\\
+	\hline
+	Brackets; square brackets & \begin{lstlisting}
+		\begin{bmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{bmatrix}
+		\end{lstlisting} & $\begin{bmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{bmatrix}$\\
+	\hline
+	Braces; curly brackets & \begin{lstlisting}
+		\begin{Bmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{Bmatrix}
+		\end{lstlisting} & $\begin{Bmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{Bmatrix}$\\
+	\hline
+	Pipes & \begin{lstlisting}
+		\begin{vmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{vmatrix}
+		\end{lstlisting} & $\begin{vmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{vmatrix}$\\
+	\hline
+	Double Pipes & \begin{lstlisting}
+		\begin{Vmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{Vmatrix}
+		\end{lstlisting} & $\begin{Vmatrix}
+			1 & 2 & 3\\
+			a & b & c
+		\end{Vmatrix}$\\
+	\hline
+	\end{tabular}
+\end{center}
+
+Source: \url{https://www.overleaf.com/learn/latex/Matrices}
+
+\section{Cases}
+Source: \url{https://www.overleaf.com/learn/latex/Questions\%2FHow_to_handle_mathematical_expressions_involving_case_statements}
 
 \end{document}
