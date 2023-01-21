@@ -9,6 +9,7 @@
 \usepackage{xcolor}                         %For Color Associated with Coding Examples
 \usepackage{multicol}                       %For Making Multiple Columns
 \usepackage{multirow}                       %Allows for multiple cells in one row in a table
+\usepackage{cancel}						%Allow for diagonal strikthroughs
 \usepackage{graphicx, epstopdf}                       %Converts eps files to pdf
 \epstopdfsetup{update}
 
@@ -353,7 +354,555 @@ y(x_0) = y_0,& y'(x_0)=y_1
 \textbf{Theorem 1} if $p(x), q(x), f(x)$\\
 - continuous on $(a, b), x_0 \in (a,b)$ then (2) has unique solution\\
 
-% KIR: MARKER
+\section{Linear Second Order Differential Equations}
+\subsection{Initial Value Problem}
+
+\begin{align*}
+y'' + p(x)y' + q(x)y &= f(x), x \in (a,b)\\
+p(x), q(x), f(x) &- \text{given} y(x)?\\
+y(x_0) = y_0&, y'(x_0) = y_1
+\end{align*}
+
+\subsubsection{Theorem 1}
+if $p(x), q(x), f(x)$\\
+- continuous on $(a,b), x_0 \in (a,b)$ then (2) has unique solution
+
+\begin{align*}
+f(x) \equiv 0, y'' + p(x)y' + g(x)y = 0\\
+\text{homogeneous equation}
+\end{align*}
+
+\begin{align*}
+0= \text{homogeneous equation}\\
+0\neq \text{non homogeneous equation}
+\end{align*}
+
+\begin{align*}
+y_1(x), y_2(x) &- \text{solutions of (3)}\\
+y(x) &= C_1y_1(x) + C_2y_2(x)\\
+&- \text{is also solution of (3) linear combination, where }C_1, C_2 - \text{some constant}
+\end{align*}
+
+\begin{align*}
+(C_1y_1 + C_2y_2)'' + p(x)(C_1y_1 + C_2y_2) &= 0\\
+C_1y_1'' + C_2y_2 + p(x)(C_1y_1' + C_2y_2') + q(x)(C_1y_1 + C_2y_2) &= 0\\
+C_1(y_1'' + p(x)y_1' + q(x)y_1) + C_2(y_2'' + p(x)y_2' + q(x)y_2) &= 0\\
+\\
+y_1'' + p(x)y_1' + q(x)y_1 &= 0\\
+y_2'' + p(x)y_2' + q(x)y_2 &= 0
+\end{align*}
+
+Definition $y_1(x), y_2(x)$ - linear independent on $(a, b)$ if $C_1y_1(x) + C_2y_2(x) = 0$ if $C_1 = C_2 = 0$\\
+\\
+\begin{align*}
+y_1 &= \Bigl ( -\frac{C_2}{C_1} \Bigl) y_2(x) & y_1 &= K \cdot y_2\\
+& & \frac{y_1}{y_2} & K
+\end{align*}
+
+\textbf{Example 1}\\
+$y_1 = \sin x, y_1 = \cos x$\\
+$\frac{\sin x}{\cos x} \neq K$\\
+linear independent $\rightarrow$ ratio is not equal to constant
+
+\textbf{Example 2}\\
+$y_1 = \sin 2x, y_2 = \sin x \cos y$\\
+$\frac{y_1}{y_2} = \frac{\sin 2x}{\sin x \cos x} = \frac{2 \sin x \cos x}{\sin x \cos x} = 2$
+
+\section{Second Order Linear Differential Equations}
+\begin{enumerate}
+	\item $y'' + p(x)y' + q(x)y = f(y)$
+	\begin{itemize}
+		\item non homogeneous equation
+	\end{itemize}
+	\item $y(x_0) = y_0, y'(x_0)=y_1$
+	\begin{itemize}
+		\item inital conditions
+	\end{itemize}
+	\item 1 + 2 $\rightarrow$ I.V.P. - has unique solution when p(x), q(x), f(x) - continuous
+\end{enumerate}
+
+\subsection{Homogeneous Equation}
+\begin{equation*}
+\text{(3)} f(x) = 0 \rightarrow y''+p(x)y'+q(x)y=0
+\end{equation*}
+
+\begin{align*}
+y_1(x), y_2(x) &\text{- linear independent}\\
+&\text{if } C_1y_1(x) + C_2y_2(x) = 0\\
+&\text{if } C_1 = c_2 = 0\\
+\\
+&y=\frac{C_2}{C_1}y_2, k = \frac{C_2}{C_1}\\
+&y_1 = ky_2
+\end{align*}
+
+\textbf{Theorem}\\
+If $y_1(x), y_2(x)$ - are solutions of equation (3) then if (1) $y_1, y_2$ - linear independent on $(a, b)$ then wronskian:
+\begin{equation*}
+W(y_1, y_2) =
+\begin{vmatrix}
+y_1(x) & y_2(x)\\
+y_1'(x) & y_2'(x)
+\end{vmatrix}
+\neq 0
+\\
+\text{for all } a<x<b
+\end{equation*}
+
+(2) $y_1, y_2$ - linear dependent, then
+$
+\begin{vmatrix}
+y_1 & y_2\\
+y_1' & y_2'
+\end{vmatrix}
+=0$
+for all $x$.
+
+\textbf{Theorem}\\
+If $y_1(x), y_2(x)$ - linear independent solutions of (3), then $y=C$, $y_1+C_2y_2(x)$ -generalsolution of (3), where $C_1$, $C_2$ - arbitrary constant\\
+\\
+\subsection{Solving Initial Value Problem $(3) + (2)$}
+\begin{enumerate}
+	\item find particular $y_1(x)$, $y_2(x)$
+	\begin{itemize}
+		linear independence
+	\end{itemize}
+	\item Set up general solution of $(3)$
+	\begin{itemize}
+		\item $y = C_1y_1 + C_2y_2$
+	\end{itemize}
+	\item Satisfy Initial Condition $(2)$
+	\begin{itemize}
+		\item 1.e subset solution $y=C_1y_1 + C_2y_2$
+	\end{itemize}
+\end{enumerate}
+
+\begin{equation*}
+\begin{matrix}
+y(x_0) = C_1y_1(x_0) + C_2y_2(x_0) = y_0\\
+y'(x_0) = C_1y_1'(x_0) + C_2y_2'(x_0) = y_1
+\end{matrix}
+\Bigm \} C_1, C_2
+\end{equation*}
+
+\begin{equation*}
+\Bigm \{
+\begin{matrix}
+a_{11}C_1 + a_{12}C_2 =d_1\\
+a_{21}C_1 + a_{22}C_2 =d_2
+\end{matrix}
+\Bigm | C_1, C_2
+\end{equation*}
+
+\begin{equation*}
+\begin{vmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{vmatrix}
+\neq 0
+\end{equation*}
+
+$a_{11}, a{12}, a{21}, a{22}, d_1, d_2$ are given constants
+
+\section{Method of Elimination}
+$C_1, C_2$ -?\\
+
+\begin{align*}
+&\Bigm \{
+\begin{matrix}
+5C_1 + 3C_2 = 1\\
+C_1 - 2C_2 = 8
+\end{matrix}
+\\
+&\Bigm \{
+\begin{matrix}
+	5C_1 + 3C_2 = 1\\
+	C_1 - 2C_2 = 8
+\end{matrix}
+\Bigm |
+\begin{matrix}
+	\\
+	\cdot (-5)
+\end{matrix}
+\\
+(+) &\Bigm \{
+\begin{matrix}
+	5C_1 + 3C_2 = 1\\
+	-5C_1 + 10C_2 = 8
+\end{matrix}
+\\
+&0 + 13C_2 = -39\\
+&\rightarrow 13C_2 = -39\\
+&C_2 = -3\\
+\\
+&C_1 -2(-3) = 8\\
+&C_1 = 2
+\end{align*}
+
+\section{Method of Substitution}
+\begin{align*}
+5(2C_2+8)+3C_2 &= 1\\
+13C_2 + 40 &=1\\
+13C_2 &= -39\\
+C_2 &= -3\\
+\\
+C_1 &= 2C_2 + 8\\
+&= 2(-3) + 8 = 2\\
+C_1 - 2 \cdot (-3) &= 8\\
+C_1 = 2
+\end{align*}
+
+\section{Homogeneous Equation with Constant Coefficients}
+$ay'' + by' + cy = 0$; $a, b, c$ - given constant\\
+\begin{align*}
+y &= e^{rx}, r-\text{constant}\\
+y' &= e^{rx} \cdot r\\
+y'' &= e^{rx} \cdot r \cdot r = e^{rx} \cdot r^2\\
+\\
+a(e^{rx}r^2) + b(e^{rx}r) + c(e^{rx}) &= 0 \Bigm | \frac{1}{e^{rx}}\\
+ar^2 + br + c &= 0\\
+r_{1, 2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{align*}
+
+\begin{align*}
+(1)~~~r&=r_1, r=r_2 \text{- distinct } r_1 \neq r_2\\
+y_1 &= e^{r_1x}, y_2 = e^{r_2x}\\
+&\text{-linear independent}
+\end{align*}
+
+\begin{align*}
+W(y_1, y_2) &=
+\begin{vmatrix}
+e^{r_1x} & e^{r_2x}\\
+r_1e^{r_1x} & r_2e^{r_2x}
+\end{vmatrix}\\
+&= r_2e^{r_1x}e^{r_2x} - re^{r_1x}e^{r_2x}\\
+&= C_1e^{r_1x} + C_2e^{r_2x}\\
+&~~~~~\text{- general solution}
+\end{align*}
+
+\textbf{Example 1}\\
+\begin{align*}
+y''-5y'+by = 0 ~~~~~ y=e^{rx}\\
+r^2 -5r +6 =0\\
+r_1=3, r_2=2\\
+y_1=e^{3x}, y_2=e^{2x}
+\end{align*}
+
+\textbf{Example 2}
+\begin{align*}
+y'' +2y' =0 \leftarrow y=e^{rx}\\
+r^2 +2r =0, r(r+2)=0\\
+r=0, r=-2\\
+y_1 = e^{0 \cdot x} = 1, y_2=e^{-2x}\\
+\rightarrow y =C_1 +C_2 \cdot e^{-2x}\\
+\end{align*}
+
+\begin{align*}
+ay`` +by` +cy =0 \leftarrow e^{rx} =y\\
+ar^2 +br +c=0\\
+r=r_1, r=r_2, r_1=r_2\\
+a(r-r_1)^2 =0\\
+a(r^2 -2r_1r +ar^2) =0\\
+b=(-2ar), c=(ar^2)\\
+y_1(x) =e^{r_1x}, y_2(x) =e^{r_1x}x\\
+y =C_1e^{r_1x} +C_2e^{r_2x}
+\end{align*}
+
+\section{Euler's Equation}
+$ax^2y''(x) +bxy'(x) +cy(x) =0$\\
+\\
+\textbf{Example 2}
+\begin{align*}
+x^2y'' +xy' -y &=0\\
+v = \ln x, &y(v)\\
+y'(x) &= \frac{dy}{dv} \cdot \frac{dv}{dx} = \frac{dy}{dv} \cdot \frac{1}{x}\\
+y''(x) &= \frac{x}{dx} (y'(x))\\
+&= \frac{d}{dx} \Bigm( \frac{dy}{dv} \cdot \frac{1}{x} \Bigm)\\
+&= \frac{d}{dx} \Bigm( \frac{dy}{dv} \Bigm) \frac{1}{x} + \frac{dy}{dv} \Bigm( -\frac{1}{x^2} \Bigm)\\
+&= \frac{d}{dv} \Bigm( \frac{dy}{dv} \Bigm) \frac{dv}{dx} \cdot \frac{1}{x} - \frac{1}{x^2} \cdot \frac{dy}{dx}\\
+&= \frac{d^2}{dv} \cdot \frac{1}{x} \cdot \frac{1}{x} - \frac{1}{x} \cdot \frac{dy}{dv}
+\end{align*}
+
+\begin{align*}
+x^2 \Bigm( \frac{d^2y}{dy^2} \cdot \frac{1}{x} - \frac{dy}{dv} \cdot \frac{1}{x^2} \Bigm) + x \Bigm( \frac{dy}{dv} \cdot \frac{1}{x} \Bigm) -y =0\\
+\frac{d^2y}{dy^2} - \frac{dy}{dv} + \frac{dy}{dv} - y\\
+\frac{d^2y}{dv^2} - y = 0 \leftarrow y(v) = e^{rv}\\
+r^2-1=0, r_1=1, r_2=-1
+\end{align*}
+
+\begin{align*}
+y &= C_1e^v +C_2e^{-v}\\
+&= C_1e^v +C_2e^{\ln x} +C_2e^{-\ln x}\\
+&= C_1x + \frac{C_2}{x} = y
+\end{align*}
+
+\section{Higher Order Differential Equation}
+$y^{(n)} +p_1(n)y^{(n-1)} +\cdots +p_{n-1}(x)y'(x) +p_n(x)y =f(x)$\\
+$p_1, p_2, p_3, \dots, p_n$\\
+\\
+f-continuous function on $(a, b)$\\
+\\
+if $f(x) \neq 0$ then equation is non-homogeneous\\
+if $f(x) = g(x)$ then equation is homogeneous\\
+\\
+$y_(x), y_2(x), \dots, y_n(x) -n$\\
+particular linear independent solutions of homogeneous equations\\
+\\
+then $y(x) =C_1y_1 +C_2y_2 +\cdots +C_ny_n$\\
+$C_1, C_2, \dots, C_n$ - constants\\
+\\
+linear independent\\
+\begin{align*}
+W[y_1, y_2, \dots, y_n] &\neq 0\\
+W[y_1, y_2, \dots, y_n] &=
+\begin{vmatrix}
+y_1 & y_2 & y_3 & \cdots & y_n\\
+y_1' & y_2' & y_3' & \cdots & y_n'\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+y_1^{(n-1)} & y_2^{n-3} & y_3^{n-4} & \cdots & y_n^{(n-1)}
+\end{vmatrix}\\
+&\neq 0
+\end{align*}
+
+$S_1, S_2, S_3, S_4, \dots, S_n$\\
+- linear independent\\
+if $C_1f_1(x) +C_2f_2(x) +\cdots +C_nf_n(x) =0$\\
+if $C_1 =C_2 =\cdots =C_n =0$\\
+\\
+\textbf{Problem 3}\\
+\begin{align*}
+f(x) =0, g(x) =\sin x, \ln(x) =e^x\\
+C_1f(a) +C_2g(x) +C_3e^x =0\\
+C_x \cdot 0 +C_2 \sin x + C_3 e^x =0\\
+C_1=100, C_2=0, C_3=0\\
+\end{align*}
+\begin{align*}
+\text{Determinate: }\\
+W[0, \sin x, e^x] &=
+\begin{vmatrix}
+0 & \sin x & e^x\\
+0 & \cos x & e^x\\
+0 & -\sin x & e^x
+\end{vmatrix}\\
+&\equiv 0
+\end{align*}
+
+\textbf{Problem 17}\\
+\begin{align*}
+y^{(3)} -3y'' +3y' -y =0\\
+y(0) =2, y'(0)=0, y''(0)=0\\
+y_1 =e^x, y_2 =x\cdot e^x, y_3 =x^2e^x
+\end{align*}
+general solution
+\begin{align*}
+y &= C_1y_1 +C_2y_2 +C_3y_3\\
+&= C_1e^x +C_2xe^x +C_3x^2e^x\\
+y(0) &= C_1e^0 +C_20e^0 +C_30^2e^0\\
+&=2\\
+\\
+y'(x) &= C_1e^0 +C_2(e^x +xe^x) +C_3(2xe^x +x^2e^x)\\
+y'(0) &= C_1e^0 +C_2(e^0 +0) +C_3(0+0)\\
+&= 0\\
+\\
+y''(x) &= C_1e^x +C_2(e^x +e^x +e^x) +C_3(2e^x +2xe^x +2xe^x +x^2e^x)\\
+y''(0) &= C_1e^0 +C_2(e^0 +e^0 +0) +C_3(3e^0 +0 +0 +0)\\
+&=0\\
+\\
+&\begin{cases}
+C_1 =2\\
+C_1 +2 =0\\
+C_1 +2C_2 +2C_3 =0
+\end{cases}\\
+\\
+&\begin{cases}
+C_2 =-C_1 =-2\\
+2C_3 =-C_1 -2C_2 =-2-2(-2) =2\\
+C_3 =1
+\end{cases}\\
+\\
+y &= 2e^x -2xe^x +x^2e^x
+\end{align*}
+
+(1) $y^{(n)} +p_1(x)y^{(n-1)} +\cdots +p_{n-1}\cdot y' +p_ny =0$\\
+homogeneous equation\\
+\\
+
+general solution of (1):
+$y =C_1y_1(x) +C_2y_2(x) +\cdots +C_ny_n$\\
+$y_1, y_2, \dots, y_3$\\
+-linear independent particular solutions of (1)\\
+\\
+(2) $y(x_0) =y_0, y'(x_0)=y_1, \cdots, y^{(n-1)} =y_{n-1}$\\
+-initial conditions\\
+(1) + (2) -Initial Value Problem\\
+(3) $y^{(n)} +p_1(x)y^{(n+1)} +\cdots +p_{n-1}(x)y' +p_n(x) \cdot y =f(x)$\\
+$f(x) \neq 0$ non-homogenous equation\\
+\\
+$\rightarrow$ General Solution of (3):\\
+\begin{align*}
+y &= C_1y_1 +C_2y_2 +\cdots +C_ny_n +y_p\\
+&= (\text{General Solution of }(1)) + (\text{Particular Solution of } (3))\\
+y_c &= C_1y_1 + C_2y_2 +\cdots +C_ny_n\\
+&\text{Complementary Solution of (3)}
+\end{align*}
+\\
+\begin{align*}
+y &=y_c +y_p\\
+&= (\text{General Solution of }(1)) + (\text{Particular Solution of }(3))
+\end{align*}
+
+$\rightarrow$Initial Value Problem for (3): (3) + (2)\\
+\\
+\textbf{Example 1}\\
+\begin{align*}
+y'' -y =12x\\
+y(0) =5 ,y'(0) =7
+\end{align*}
+
+(1) homogeneous equation:
+\begin{align*}
+y'' -4y &= 0 \rightarrow y =e^{rx}\\
+r^2 \dot e^{rx} -4 &= 0 \Bigm | \frac{1}{e^{rx}}\\
+r^2 -4 &= 0 & r &= r_1 =2\\
+& & r &= r_2 = -2\\
+y_1 &= e^{2x}, y_2 = e^{-2x}\\
+\rightarrow y &= C_1e^{2x} +C_2e^{-2x}\\
+&\text{general solution}
+\end{align*}
+
+(2) non-homogeneous
+\begin{align*}
+y &= y_c +y_p & y_p &= 3x\\
+& y_c =C_1e^{2x} +C_2e^{-2x}\\
+y_p &= 3x \rightarrow 0 - 4(3x) \equiv -12x\\
+y &= C_1e^{2x} +C_2e^{-2x} +3x\\
+& \text{General Solution } = C_1e^{2x} +C_2e^{-2x}\\
+& \text{Particular Solution } = 3x\\
+\\
+y(0) &= C_1e^0 +C_2e^0 +3 \cdot 0 =5\\
+y(0) &= 2C_2e^0 -2C_2e^0 +3 =7\\
+\\
+C_1 +C_2 &= 5\\
+2C_1 -2C_2 +3 &= 7\\
+\\
+C_1 +C_2 &= 5\\
+C_1 -C_2 &= 2\\
+\\
+2C_1 +0 &= 7\\
+\\
+C_1 &= \frac{7}{2}\\
+C_2 &= 5 -C_1\\
+&= 5 -\frac{7}{2} = \frac{3}{2}\\
+\\
+y &= \frac{7}{2}e^{2x} +\frac{3}{2}e^{-2x} +3x
+\end{align*}
+
+\section{Higher Order Linear Differential Equations}
+(1) $y^{(1)} +p_1y^{(n-1)} +\cdots +p_{n-1}y' +p_ny =f(x)$\\
+- non homogeneous equation\\
+general solution y of (1) is $y=y_c+y_p$,\\
+$y_p$ - any particular solution of (1)\\
+$y_c$ - complementary solution which is the general solution of homogeneous equation $[(1) \text{ if } f(x) \equiv 0]$\\
+$y_c =C_1y_1 +C_2y_2 +\cdots +C_ny_n$, where $y_1, y_2, \cdots, y_n$\\
+-linear independent solutions of homogeneous equations\\
+\\
+\textbf{Example 1}\\
+\begin{align*}
+y'' -4y &=-12x, y_p =3x\\
+y_C &= ? \rightarrow y'' -4y =0\\
+y &= C_1y_1 + C_2y_2 = C_1e^{2x} +C_2ye^{-2x}\\
+y &= y_C +y_P =C_1e^{2x} +C_2e^{-2x} +3x\\
+\end{align*}
+
+(2) $y(x_0) =y_0, y'(x_0)=y_1, y''(x_0)=y_2, \dots, y^{(n-1)}(x_0) =y_{n-1}$\\
+problem (1) + (2) - Initial Value Proplem (IVP) for (1)\\
+$y' =f(x, y), y(x_0) =y_1$\\
+$y'' +p_1y' +p_2y =f(x), y(x_0) =0, y'(x_0) =y_1$
+
+\section{Linear Equation with Constant Coefficient}
+\begin{align*}
+a_0, a_1, a_2, \dots, a_n\\
+y^{(n)} +a_1y^{(n-1)} +a_2y^{(n-2)} +\cdots +a_{n-1}y' +a_ny\\
+= \sum_{i=1}^{n} a_{n-1} y^{(i)} &= 0\\
+&y=e^{rx}\\
+r^ne^{rx} +a_1r^{n-1}e^{rx} +a_2r^{n-2}e^{rx} +\cdots +a_{n-1}re^{rx} +a_ne^{rx} &= 0\\
+\frac{r^ne^{rx} +a_1r^{n-1}e^{rx} +a_2r^{n-2}e^{rx} +\cdots +a_{n-1}re^{rx} +a_ne^{rx}}{e^{rx}} &= 0\\
+r^n +a_1r^{n-1} +a_2r^{n-2} +\cdots +a_{n-1}r +a_n = 0\\
+\text{-characteristic equation}\\
+r = r_1(r-r_1)
+\end{align*}
+
+\subsection{Rules for Characteristic Equation}
+(1) roots are $n$ distinct real numbers\\
+\begin{align*}
+r=r_1 &, r=r_2, \cdots, r=r_n\\
+\rightarrow y_1 &= e^{r_1x}, y_2 = e^{r_2x}, y_3 = e^{r_3x}, \cdots, y_n = e^{r_nx}\\
+&y_n = e^{r_nx}\\
+y &= C_1e^{r_1x} +C_2e^{r_2x} +\cdots +C_ne^{r_nx}\\
+&= \sum_{z=1}^{n} C_1e^{r_1x}
+\end{align*}
+(2) $r=r_s, r=r_s, \cdots, r=r_s$ for $k$ times\\
+\begin{align*}
+y_1 &= e^{r_2x}, y_2 = x \cdot e^{r_s \cdot x}, y_3 = x^2 \cdot e^{r_sx}, \dots, y_k=x^{k-1}e^{r_sx}\\
+&\text{multiplicity of }k
+\end{align*}
+
+\textbf{Example 2}
+\begin{align*}
+y^{(3)} +3y'' +3y' +y &= 0 \leftarrow ye^{rx}\\
+r^3e^{rx} +3r^2e^{rx} +3re^{rx} +e^{rx} &= 0\\
+\frac{r^3e^{rx} +3r^2e^{rx} +3re^{rx} +e^{rx}}{e^{rx}} &= \frac{0}{e^{rx}}\\
+r^3 +3r^2 +3r +1 &= 0
+\end{align*}
+
+General Rule of Algebraic Polynomials
+\begin{itemize}
+	\item root is such number that divides all values as an integer
+\end{itemize}
+
+Long Division\\
+$(r+1)^3=0$\\
+$(r+1)(r+1)(r+1)=0$\\
+$r=r_1=-1, r=r_2=-1, r=r_3=-1$\\
+\\
+One Repeated Root of Multiplicity 3\\
+$y_1=e^{-x}, y_2=xe^{-x}, y_3=x^2e^{-x}$\\
+$y=C_1e^{-x} +C_2e^{-x}x +C_3e^{-x}x^2$\\
+\\
+\textbf{Example 3} (P. 134 \#26)\\
+\begin{align*}
+y^{(3)} +10y'' +25y' &=0; y(0)=3, y'(0)=4, y''(0)=5\\
+&\rightarrow y=e^{rx}\\
+r^3e^{ex} +10r^2e^{rx} +25re^{rx} &=0\\
+\frac{r^3e^{ex} +10r^2e^{rx} +25re^{rx}}{e^{rx}} &= \frac{0}{e^{rx}}\\
+\rightarrow r^3 +10r^2 +25r &= 0\\
+r(r^2 +10r +25) &= 0\\
+r(r+5)^2 &= 0\\
+&\text{repeated root of multiplicity 2}\\
+r &= r_1=0, r=r_2=-5, r=r_3=-5\\
+y_1 &= e^0, y_2=e^{-5x}, y_3=e^{-5x}x\\
+y &= C_1 +C_2e^5x +C_3e^{-5x}x\\
+\\
+y'(x) &= C_2(-5)e^{-5x} +C_3[e^{-5x}-5xe^{-5x}]\\
+y''(x) &= C_2 25e^{-5x} +C_3[-5e^{-5x}-5e^{-5x} +25xe^{-5x}]\\
+\\
+&\text{Initial Conditions}\\
+&\begin{cases}
+	y(0) = C_2 +C_2e^0 +C_3 \cdot 0 =3\\
+	y'(0) = -5C_2e^0 +C_3[e^0-0] =4\\
+	y''(0) = 25C_2e^0 +C_3[-5e^02+0] =5
+\end{cases}\\
+&\begin{cases}
+	C_1+C_2=3\\
+	-5C_2 + C_3 = 4\\
+	25C_2 -10C_3 =5
+\end{cases}\\
+\\
+0-5C_3 &= 25\\
+25C_2 &= 5+10C_3 = 5-50\\
+C_2 &= \frac{1}{5}-10 = C_1\frac{4}{1}\\
+C_1 &= 3-C_2
+\end{align*}
 
 \section{Complex Roots of Charatistics Equations}
 Imaginary Number $\rightarrow \sqrt{-1} = i$\\
@@ -416,8 +965,1200 @@ r^0:& 4 = 4C \rightarrow c=1
 
 
 \section{Non-Homogeneous Equation}
-%\subsection{}
+$y^{(n)} +p_1y^{n-1} +\cdots +p_{n-1}y' +p_ny =f(x)$\\
+$f(x) \neq 0$\\
+general solution $y=y_c+y_p$\\
+$y_c$ - general solution of homogeneous $(f(x)\equiv0)$ equation\\
+$y_p$ - any particular solution of non-homogeneous equation\\
 
-%\subsubsection{}
+\section{Method of Undetermined Coefficients}
+\begin{align*}
+(1) ~~~ f(x) &= \sum_{k-0}{n} A_kx^k\\
+\rightarrow y_p &= \sum_{k=0}^{n} B_kx^k
+\end{align*}
 
+\textbf{Example 1}
+\begin{align*}
+y''+3y'+4y &= 3x+2\\
+\rightarrow y_p &= Ax+B\\
+(A+B)'' +3(Ax+B)' +4(Ax+B) &= 3x+2\\
+0 +3A +4(Ax+B) &= 3x+2\\
+\\
+x &: 4A =3 \rightarrow A=\frac{3}{4}\\
+x^0 &: 3A+4B =2\\
+B &=\frac{2-3A}{4} =\frac{2-3-\frac{3}{4}}{4}\\
+&= -\frac{1}{16}\\
+\\
+(2) ~~~ f(x) &= a \sin kx + b \cos kx\\
+y_p &= A \sin kx + B \cos kx\\
+&A, B undetermined
+\end{align*}
+
+\textbf{Example 2}
+\begin{align*}
+y'-2y &= 2 \cos x\\
+\nwarrow y_p &= A\sin x +B\cos x\\
+3(A\sin x+B\cos x)''+(A\sin x+B\cos x) &= 2\cos x\\
+3(-A\sin x+B\cos x) &= 2\cos x\\
+\\
+\begin{matrix}
+\cos x: -B+A-2B=2\\
+\sin x: -3A-B-2A=0
+\end{matrix}
+\Bigm\}\\
+\\
+A-5B &= 2\\
+-5-B &= 0\\
+\\
+B &= -5A\\
+A+25 &= 2\\
+A &= \frac{1}{13}\\
+\\
+B &= -\frac{5}{13}\\
+y_p &= \frac{1}{13}\sin x - \frac{5}{13}\cos x\\
+\\
+(3) ~~~ f(x) &= e^{px}\sum_{k=0}^{n} A_kx^k, y_p=e^{px}\sum_{k=0}^{n} B_kx^k\\
+&B_k\text{ - undetermined}
+\end{align*}
+
+\textbf{Example 3}
+\begin{align*}
+y''-4y &= 2e^{3x}, y_p=Be^{3x}\\
+(Be^{3x})''-4Be^{3x} &= 2e^{3x}\\
+9Be^{3x}-4Be^{3x} &= 2e^{3x}\\
+\rightarrow 9B-4B &= 2, B=\frac{2}{5}
+\end{align*}
+
+\textbf{Example 4}
+\begin{align*}
+y''-4y &= 3x^2e^{3x}\\
+y_p &= (Ax^2+B_x+C)e^{3x}
+\end{align*}
+
+\textbf{Example 5}
+\begin{align*}
+y''-4y &= 2\cdot e^{2x}\\
+\nwarrow y_p &= A \cdot e^{2x}\\
+(A \cdot e^{2x})''-4Ae^{2x} &= 2e^{2x}\\
+4Ae^{2x}-4Ae^{2x} &= 2e^{2x}\\
+0 &= 2\cdot e^{2x}\\
+\\
+y''-4y &= 0\\
+r^2-4 &= 0\\
+r = \pm 2\\
+y_p = A_x \cdot e^{2x}
+\end{align*}
+
+\begin{align*}
+y^{(n)} +\cdots +p_ny &= f(x)\\
+y &= y_c +y_p
+\end{align*}
+
+\noindent$(1) ~~~ f(x) = \sum_{k=0}^{n} a_kx^n, y_p = \sum_{n=0}^n A_k+x^k$ when $r=0$ is not a root of characteristic equation\\
+$~~~~~~~~~~\rightarrow$ n-degree polynomial\\
+\\
+$y_p = \Bigm( \sum_{k=0}^{n} a_kx^k \Bigm) x^m$\\
+if $r=p$ is a root of characteristic equation of multiplicity $m$\\
+\\
+\\
+$(2) ~~~ f(x) = e^{px} \sum_{k=0}^n a_kx^k, y_p=e^{px} \sum_{k=0}^nA_kx^k$ if $r=p$ is not a root of characteristic equation\\
+\\
+$y_p = \Bigm( e^{px} \sum_{k=0}^n A_kx^k \Bigm) x^m$ if $r=p$ is a root of characteristic equation of multiplicity $m$\\
+\\
+\\
+$(3) ~~~ f(x) = e^{px} (p(x)\cos qx +Q_m(x)\sin (qx)),\\ y_p = e^px(\overline{p_k}(x)\cos(qx) +\overline{Q_k}(x)\sin(qx))$ where $k=mx(n,m)$, if $r\neq p+iq$\\
+\\
+$y_p = e^{px}(\overline{p_k}(x)\cos(qx) +\overline{Q_k}(x)\sin(qx))x^m$ of multiplicity m, then\\
+\\
+$y^{(n)} +\cdots +p_ny =f(x)$\\
+$(1) ~~~ f(x) = e^{px} (p_n(x)\cos qx +Q_m(x)\sin qx)\\
+y_p=e^{px} (\overline{p_k}(x)\cos qx + \overline{Q_k}(x)\sin qx)x^m\\
+k=max(n,m)$\\
+\\
+$y_p =e^{px}(\overline{p_k}\cos qx +\overline{Q_k}(x)\sin qx)x^m\\
+\rightarrow$ if $p+iq=r$ - root of characteristic equation of multiplicity ``$m$''\\
+\\
+$(2) ~~~ f(x)=e^{px}, P_k(x)\\
+y_p=e^{px} \cdot Q_k(x), p=0$\\
+\\
+$y_p=e^{px}Q_n(x)x^m$\\
+if $p=r$ -root of characteristic equation of multiplicity, ``$m$''\\
+\\
+if $f(x)$ $i$th sum of the above functions,
+\begin{align*}
+y^{(n)} +\cdots +p_ny = f_1(x) +f_2(x) &\rightarrow y_p =(y_1)_p +(y_2)_p\\
+(1) ~~~ y_1^{(k)} +\cdots +p_ky_1 =f_1(x) &\rightarrow (y_1)_p\\
+(2) ~~~ y_2^{(k)} +\cdots +p_ky_2 =f_2(x) &\rightarrow (y_2)_p
+\end{align*}
+\\
+$(1) ~~~ f(x) =e^{px}[p_k(x)\sin(qx) +Q_m(x)\cos(qx)]\\
+y_p = e^{px}[\overline{p_k}(x)\sin qx +\overline{Q_k}(x)\cos(qx)]x^m$\\
+\\
+$(2) ~~~ f(x) =e^{px}\cdot P_k(x), p=r, m\\
+y=e^{px} \frac{1}{P_k(x)} \cdot x^m$
+\\
+\\
+\textbf{Problem 25}
+\begin{align*}
+y'' +3y' +2y &= xe^{-x}-e^{2x}\\
+\\
+y_p &= (y_1)_p = (y_2)_p\\
+\\
+1. ~~~ y_1'' +3y_1' +2y_1 &= x\cdot e^{-x} =f_1(x)\\
+(y_1)_p &= (ax+b)e^{-x}\\
+\\
+2. ~~~ y_2'' +3y_2' +2y_2 &= xe^{-2x} = f_2(x)\\
+(y_2)_p &= (cx + d)e^{-2}
+\end{align*}
+\begin{align*}
+y=e^{rx} \rightarrow y''+3y'+2y &= 0\\
+r^2 +3r +2 &= 0\\
+(r+1)(r+2) &= 0\\
+m=1, ~~~ r &= -1\\
+r &= -2
+\end{align*}
+\\
+\textbf{Example 1}
+\begin{align*}
+(y_1)_p &= (ax+b)e^{-x}\\
+&= (ax^2+bx)e^{-x}\\
+(y_1)p' &= (2ax+b)e^{-x}-(ax^2+bx)e^{-x}\\
+(y_1)p'' &= 2ae^{-x}-e^{-x}(2a+b)-(2ax+b)e^{-x}+e^{-x}(ax^2+b)\\
+&= 2ae^{-x}-2e^{-x}(2ax+b)+e^{-x}(ax^2+bx)\\
+&= 2ae^{-x}-2e^{-x}(ax+b)+e^{-x}(ax^2+bx)+3[(2ax+b)e^{-x}-(ax^2+bx)e^{-x}]+2(ax^2+bx)e^{-x}\\
+&= x \cdot e^{-x}
+\end{align*}
+\\
+\begin{align*}
+x^2 &: a-a=0\\
+x &: -2a+b+ba-3b+2b=1\\
+x^0 &: 2a-2b+3b=0
+\end{align*}
+\\
+\begin{align*}
+4a=1 &\rightarrow a=\frac{1}{4}\\
+2a+b=0 &\rightarrow b=-2a=-\frac{1}{2}
+\end{align*}
+\begin{equation*}
+(y_1)_p = (\frac{1}{4}x-\frac{1}{2})e^{-x}\cdot x
+\end{equation*}
+\begin{align*}
+y_p &= (y_1)_p +(y_2)_p\\
+&= (ax^2 +bx)e^{-x} +(cx+d)e^{-2x}\cdot x
+\end{align*}
+
+\section{Method of Variation of Parameters}
+$y'' +P(x)y' +Q(x)y =f(x), y_p=?$\\
+\\
+\underline{1 step} We solve $y'' +P(x)y' +Q(x)y =0~~~^{(2)}$ we find solutions $y_1(x), y_2(x)$
+\begin{itemize}
+	\item linear independent
+\end{itemize}
+$y =C_1y_1(x) +C_2y_2(x)$ - general $(2)$ solution of $(2)$\\
+\\
+\underline{2 step} We'll search for solution $y_p~~~^{(1)}$ of $(1)$ as $y_p=u_1(x)\cdot y_1(x) +y_2(x)y_2(x)$
+\begin{align*}
+y_p' &= u_1'(x) \cdot y_1(x) +u_1(x) \cdot y_1'(x) +u_2'(x)y_2(x) +u_2(x) \cdot y_2'(x)\\
+y_p' &= u_1(x)y_1'(x) +u_2(x)y_2'(x) +u_1'y_1(x) +u_2'(x)y_2(x)
+\end{align*}
+Add restrictions\\
+$u_1'(x) y_1(x) + u_2'(x)y_2(x)=0$\\
+\begin{align*}
+y_p' &= u_1(x)y'(x) +u_2(x)y_2'(x)\\
+(y_p)'' &= u_1'y_1' +u_1y_1'' +u_2'y_2' +u_2 \cdot y_2''\\
+\\
+y_p' &= u_1(x)y_1'(x) +u_2(x)y_2'(x)
+\end{align*}
+from (1) we have:
+\begin{align*}
+f(x) &= u_1'y_1' +u_1 \cdot y_2'' +u_2'y_2' +u_2y_2'' +P(x)(u_1y_1' +u_2y_2') +Q(x)(u_1y_1 +u_2y_2)\\
+y_p'' &= u_1'y_1' +u_1 \cdot y_2'' +u_2'y_2' +u_2y_2''\\
+y_p' &= u_1y_1' +u_2y_2'\\
+y_p &= u_1y_1 +u_2y_2
+\end{align*}
+\begin{align*}
+u_1[y_1'' +py_1' +Qy1] +u_2[y_2'' +P \cdot y_2' +Qy_2] +u_1'y_1' +u_2'y+2' &= f(x)\\
+y_1'' +py_1' +Qy1 &= 0\\
+y_2'' +P \cdot y_2' +Qy_2 &= 0
+\end{align*}
+\begin{align*}
+(3) \rightarrow u_1' &= \int \limits \phi(x)dxy_1 +\int \limits \psi(x)dx \cdot y_2(x)\\
+&\nwarrow \text{parameter solution of }(1)
+\end{align*}
+\\
+\textbf{Example 1}\\
+$y'' +y =\tan x$
+\begin{align*}
+\text{\underline{1 step}} ~~~ &y'' +y =0 \leftarrow y=e^{rx}\\
+\rightarrow &r^2 +1 =0, r_1,\\
+\rightarrow &y_1 =\cos x, y_2=\sin x\\
+&y = C_1 \cos x +C_2 \sin x
+\end{align*}
+\underline{2 step} $~~~ y_p =u_1(x)\cdot \cos x +u_2(x) \sin x$ system $(3)$ in this case is, following
+\begin{equation*}
+\begin{cases}
+	u_1'\cos x +u_2'\sin x =0\\
+	u_1'(\sin x) +u_2'(\cos x) =\tan x
+\end{cases}
+\Bigm|
+\begin{matrix}
+\sin x\\
+\cos x
+\end{matrix}
+(+)
+\end{equation*}
+
+\begin{equation*}
+0 +u_2'(\sin^2x +\cos^2x) =\tan x \cos x
+\end{equation*}
+
+\begin{align*}
+u_2' &= \sin x\\
+u_1' &= -u_2' \cdot \frac{\sin x}{\cos x}\\
+&= -\frac{\sin x \sin x}{\cos x}\\
+\\
+u_2 &= \int \limits u_2' dx\\
+&= \int \limits \sin x dx\\
+&= -\cos x\\
+\\
+u_1 &= \int \limits u_1' dx\\
+&= \int \limits \frac{\sin^2x}{\cos x} dx\\
+&= -\frac{\sin^2x}{\cos^2x} \cos x dx\\
+dv &= \cos x dx\\
+\\
+v &= \sin x, dv = \cos xdx\\
+&= -\int \limits \frac{v^2 dv}{1-v^2}\\
+&= -\int \limits \frac{(v^2-1+1)}{v^2-1}dv\\
+&= \int \limits dv +\int \limits \frac{dv}{v^2-1}\\
+&~~~(v-1)(v+1) = v^2-1\\
+&= \int \limits dv +\int \limits \frac{dv}{(v-1)(v+1)}\\
+&= v +\int \limits \frac{1}{2} \Bigm[ \frac{1}{v-1} -\frac{1}{v+1} \Bigm]dv\\
+\\
+u_1 &= v +\frac{1}{2} [\ln|v-1| -\ln|v+1|]\\
+&= \sin x +\frac{1}{2} \ln \Bigm|\frac{\sin x-1}{\sin x+1}\Bigm|\\
+\\
+y_p &= u_1y_1 +u_2y_2\\
+&= \Bigm(\sin +\frac{1}{2}\ln \Bigm|\frac{\sin x-1}{\sin x+1}\Bigm| \Bigm) \cos x -\cos x \sin x
+\end{align*}
+
+\section{Variation of Parameters}
+\begin{align*}
+y'' +P(x)y' +Q(x)y &= f(x)\\
+y_p &= ?
+\end{align*}
+
+\underline{Step 1}
+\begin{align*}
+y'' +P(x)y' +Q(x) &= 0, y_1(x), y_2(x)\\
+y_c &= C_1y_1(x) +C_2y_2(x)
+\end{align*}
+
+\underline{Step 2}
+\begin{align*}
+y_p &= u_1(x)y_1(x) +u_2(x)y_2\\
+&\begin{Bmatrix}
+	u_1'(x) \cdot y_1(x) +u_2'(x) \cdot y_2(x) =0\\
+	u_1'(x)y_1'(x) +u_2'(x)y_2'(x) =f(x)
+\end{Bmatrix}\\
+u_1'(x) &= \rho(x), u_2'(x)=\psi(x)
+%\rho is probably \phi, but \rho matches the character better
+%use a different font for \phi to get the right character
+\end{align*}
+
+\textbf{Problem 49}\\
+$y''-4y'+4y=2e^{2x}$\\
+\underline{Step 1}
+\begin{align*}
+y''-4y'+4y &= 0\\
+y &= e^{rx}\\
+r^2-4r+4 &= 0\\
+(r-2)^2 &= 0\\
+r_1=2, & r_2=2\\
+&\rightarrow y_1=e^{2x}, y_2=e^{2x}\cdot x
+\end{align*}
+\underline{Step 2}
+\begin{align*}
+y_p &= u_1(x) \cdot y_1(x) +u_2(x)y_2\\
+&= u_1(x) \cdot e^{2x} +u_2(x)e^{2x}x\\
+&\begin{cases}
+	u_1'e^{2x} +u_2'e^{2x} =0\\
+	u_1' \cdot 2e^{2x} + u_2'(x)(2e^{2x}x+e^{2x})=2e^{2x}
+\end{cases}
+\Bigm| \frac{1}{e^{2x}}\\
+&\begin{cases}
+	u_1'+u_2'x=0\\
+	2u_1'+u_2'(2x+1)=0
+\end{cases}\\
+0+u_2'(2x-2x-1) &= -2\\
+\\
+u_1' &= 2\\
+\\
+u_1' &= -2\\
+u &= \int \limits u_1'(x)dx\\
+&= -2 \int \limits x dx\\
+&= \frac{-2x}{2}\\
+\\
+u_2 &= \int \limits u_2'(x)dx\\
+&= \int \limits 2 dx\\
+&= 2x\\
+y_p &= -x^2e^{2x} +2xe^{2x}x\\
+&= x^2e^{2x}
+\end{align*}
+
+\section{Linear Systems of First Order Differential Equations}
+\begin{align*}
+&y_1(t), y_2(t), \cdots, y_n(t) - \text{unknown}\\
+\frac{dy_1}{dt} &= p_{11}y_1 +p_{12}y_2 +\cdots +p_{1n}y_n +f_1(t)\\
+\frac{dy_2}{dt} &= p_{21}y_1 +p_{22}y_2 +\cdots +p_{2n}y_n +f_2(t)\\
+\cdots & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots\\
+\frac{dy_n}{dt} &= p_{n1}y_1 +p_{n2}y_2 +\cdots +p_{nn}y_n +f_n(t)
+\end{align*}
+
+\noindent$p_{2i}(t)$ -given\\
+$f_i(t)$ -given
+
+\begin{equation*}
+Y'(t) = 
+\begin{bmatrix}
+	y_1'\\
+	y_2'\\
+	\vdots\\
+	y_n'
+\end{bmatrix},
+Y= \begin{bmatrix}
+	y_1\\
+	y_2\\
+	\vdots\\
+	y_n'
+\end{bmatrix},
+A = \begin{bmatrix}
+	p_{11} & p_{12} & \cdots & y_{1n}\\
+	p_{21} & p_{22} & \cdots & y_{2n}\\
+	\cdots & \cdots & \cdots & \cdots\\
+	p_{1n} & p_{2n} & \cdots & y_{nn}
+\end{bmatrix},
+F = \begin{bmatrix}
+	f_1\\
+	f_2\\
+	\vdots\\
+	f_n
+\end{bmatrix}
+\end{equation*}
+
+\noindent$y(0)=y_{10}, y_2(0)=y_{20}, \cdots, y_n(0)=y_{n0}$\\
+Initial Conditions
+
+\section{Systems of 2 Equations for $x(t), y(t)$}
+\begin{align*}
+\frac{dx}{dt} &= a_{11}x +a_{12}y +f(t)\\
+\frac{dy}{dt} &= a_{21}x +a_{22}y +f(t)
+\end{align*}
+
+\begin{equation*}
+Y=\begin{bmatrix}
+	x(t)\\
+	y(t)
+\end{bmatrix},
+Y'=\begin{bmatrix}
+	x'(t)\\
+	y'(t)
+\end{bmatrix},
+A=\begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix},
+F=\begin{bmatrix}
+	f_1\\
+	f_2
+\end{bmatrix}
+\end{equation*}
+
+\begin{align*}
+\begin{bmatrix}
+	x'\\
+	y'
+\end{bmatrix}
+&= \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix}
+\cdot \begin{bmatrix}
+	x\\
+	y
+\end{bmatrix}
++ \begin{bmatrix}
+	f_1\\
+	f_2
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	a_{11}x+a_{12}y\\
+	a_{12}x+a_{22}y
+\end{bmatrix}
++ \begin{bmatrix}
+	f_1\\
+	f_2
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	a_{11}x+a_{12}y+f_1\\
+	a_{12}x+a_{22}y+f_2
+\end{bmatrix}
+\end{align*}
+
+\begin{align*}
+x' &= a_{11}+a_{12}y+f_1\\
+y' &= a_{22}+a_{22}y+f_2
+\end{align*}
+
+\noindent\textbf{Example}\\
+$ay''+by'+cy=t^2$\\
+$\rightarrow$ second order differential equation\\
+$y'=x$\\
+\\
+\begin{align*}
+ax'+bx+cy=t^2\\
+x'=\frac{-bx-cy+t^2}{a}\\
+\begin{cases}
+	x'=-\frac{bx}{a}-\frac{c}{a}y+\frac{t^2}{a} & x(t)\\
+	y'=x
+\end{cases}
+\end{align*}
+
+\section{Method of Elimination}
+\textbf{Example 1}\\
+\begin{align*}
+x' &= -2xy, y'=\frac{1}{2}x\\
+&\downarrow\\
+(x'(t)) &= (-2y)' \leftarrow \text{derivative with respect to $t$}\\
+x''(t) &= -2y'(t)\\
+y'(t) &= -\frac{x''(t)}{2}\\
+\\
+-\frac{x''(t)}{2} &= \frac{1}{2}x\\
+\rightarrow x''(t) + x &= 0 \leftarrow xe^{rt}\\
+r^2 + 1 &= 0, r_{1, 2} = \pm 2\\
+x_1 &= \cos t, x_2 = \sin t\\
+\\
+x &= C_1x_1 + C_2x_2\\
+&= C_1\cos t + C_2\sin t\\
+y &= -\frac{x'(t)}{2}\\
+&= -\frac{1}{2}(-C_1\sin t +C_2\cos t)\\
+&= \frac{C_1}{2}\sin t +\frac{C_2}{2}\cos t
+\end{align*}
+
+Using Initial Conditions
+\begin{align*}
+x(0) &= C_1\cos0 +C_2\sin0 = 0\\
+y(0) &= \frac{C_1}{2}\sin0 -\frac{C_2}{2}\cos0 = 0\\
+\\
+C_1 &= 2\\
+C_2 &= 0\\
+\\
+x &= 2\cos t\\
+y &= \frac{2}{2} \sin t\\
+\\
+\Bigm( \frac{x}{2} \Bigm)^2 &= (\cos t)^2\\
+\underline{(y)^2} &\underline{= (\sin t)^2}\\
+\Bigm( \frac{x}{2} \Bigm)^2 +y^2 &= \cos^2t +\sin^2t =1
+\end{align*}
+
+\begin{align*}
+\frac{y^2}{2^2} + \frac{y^2}{2^2} = 1
+%KIR: Include graphic of the graph of the function
+\end{align*}
+
+\textbf{Example 2}
+\begin{align*}
+(1) x'(t) &= 4x-3y\\
+(2) y'(t) &= 6x-7y\\
+\\
+\text{from }(2) x &= \frac{y'(t)+7y}{6}\\
+x'(t) &= \frac{y''+7y'}{6}\\
+\text{from }(1) \frac{y''+7y'}{6} &= 4\frac{y'+7y}{6} -3y\\
+\\
+y''+7y' &= 4y'+28y-18y\\
+y''+3y &= 0 \leftarrow y=e^{rt}\\
+r^2+3r-10 &= 0\\
+r_1 &= 2, r_2=-5\\
+\\
+y_1 &= e^{2t}\\
+y_2 &= r^{-5t}\\
+\\
+y &= C_1e^{2t} +C_2e^{-5t}\\
+\\
+x &= \frac{2C_1e^{2t}-5C_2e^{-5t}+7(C_1e^{2t}+C_2e^{-5t})}{6}\\
+&= \frac{9C_1e^{2t}}{6} +\frac{2C_2e^{-5t}}{6}\\
+&= x\\
+\\
+y &= C_1e^{2t} +C_2e^{-5t}
+\end{align*}
+
+\section{System of first order Differential Equations}
+\begin{align*}
+\overline{X}' &= \overline{A} \cdot \overline{X} \rightarrow \begin{bmatrix}
+	x'(t)\\
+	y'(t)
+\end{bmatrix} = \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix} \cdot \begin{bmatrix}
+	x\\
+	y
+\end{bmatrix}\\
+&\text{solutions}\\
+&\begin{cases}
+	x'=a_{11}x+a_{12}y\\
+	y'=a_{21}x+a_{22}y
+\end{cases}\\
+&\begin{cases}
+	x'=C_1x_1 +C_2x_2\\
+	y'=C_1y_1 +C_2y_2
+\end{cases}\\
+\overline{X} &= C_1\overline{X_1}+C_2\overline{X_2}\\
+&\text{where }\overline{X} = \begin{bmatrix}
+	x\\
+	y
+\end{bmatrix}, \overline{X_1} = \begin{bmatrix}
+	x_1\\
+	y_1
+\end{bmatrix}, \overline{X_2} = \begin{bmatrix}
+	x_2\\
+	y_2
+\end{bmatrix}
+\end{align*}
+$\overline{X_1}, \overline{X_2}$ particular solution of system 1\\
+$\overline{X_1}, \overline{X_2}$ - linear independent or $C_1\overline{X_1} + C_2\overline{X_2} = 0$, only if $C_1=C_2=0$\\
+\begin{equation*}
+W = \begin{vmatrix}
+	x_1 & x_2\\
+	y_1 & y_2
+\end{vmatrix} \neq 0
+\end{equation*}
+\textbf{Example 1}
+\begin{align*}
+\overline{X'} &= \begin{bmatrix}
+	4 & -3\\
+	6 & -7
+\end{bmatrix}
+\overline{X}(t)\\
+\overline{X_1} &= \begin{bmatrix}
+	3e^{2t}\\
+	2e^{2t}
+\end{bmatrix}, \overline{X_2}\begin{bmatrix}
+	e^{-5t}\\
+	3e^{-5t}
+\end{bmatrix}\\
+\overline{X_1}, \overline{X_2} &- \text{linear independent}
+\end{align*}
+Substitute $\overline{X_1}$, into the system gives
+\begin{align*}
+\begin{bmatrix}
+	(3e^{2t})'\\
+	(2e^{2t})'
+\end{bmatrix} &= \begin{bmatrix}
+	4 & -3\\
+	6 & -7
+\end{bmatrix} \begin{bmatrix}
+	3e^{2t}\\
+	2e^{2t}
+\end{bmatrix}\\
+\begin{bmatrix}
+	6e^{2t}\\
+	4e^{2t}
+\end{bmatrix} &= \begin{bmatrix}
+	4\cdot 3\cdot e^{2t}+(-3)\cdot 3\cdot e^{2t}\\
+	6\cdot 2\cdot e^{2t}+(-7)\cdot 2\cdot e^{2t}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	6e^{2t}\\
+	4e^{2t}
+\end{bmatrix}
+\end{align*}
+Substitute $\overline{X_2}$ into the system:
+\begin{align*}
+\begin{bmatrix}
+	(e^{-5t})'\\
+	(3e^{-5t})'
+\end{bmatrix} &= \begin{bmatrix}
+	4 & -3\\
+	6 & -7
+\end{bmatrix} \begin{bmatrix}
+	e^{-5t}\\
+	3e^{-5t}
+\end{bmatrix}\\
+\begin{bmatrix}
+	-5e^{-5t}\\
+	-15e^{-5t}
+\end{bmatrix} &= \begin{bmatrix}
+	4e^{-5t}+(-3)3e^{-5t}\\
+	6e^{-5t}+(-7)3e^{-5t}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	-5e^{-5t}\\
+	-15e^{-5t}
+\end{bmatrix}
+\end{align*}
+
+\begin{align*}
+W &= \begin{vmatrix}
+	x_1 & x_2\\
+	y_1 & y_2
+\end{vmatrix} = \begin{vmatrix}
+	3e^{2t} & e^{-5t}\\
+	2e^{2t} & 3e^{-5t}
+\end{vmatrix}\\
+&= 3e^{2t} \cdot 3e^{-5t} -2e^{2t} \cdot e^{-5t}\\
+&= 9e^{-3t}-2e^{-3t}\\
+&= 7e^{-3t} \neq 0
+\end{align*}
+Linear Independent\\
+\begin{align*}
+\overline{X} &= C_1\begin{bmatrix}
+	3e^{2t}\\
+	2e^{2t}
+\end{bmatrix} + \begin{bmatrix}
+	C_2e^{-5t}\\
+	3e^{-5t}
+\end{bmatrix}\\
+x &= 3C_1e^{2t}+C_2e^{-5t}\\
+y &= 2C_1e^{2t}+3C_2e^{-5t}
+\end{align*}
+
+\section{Method of Eigenvalues}
+$y''+ay'+b=0, y=e^{rt}$\\
+\begin{equation*}
+\overline{X'} = \overline{A} \cdot \overline{X} \leftarrow \overline{X} = \overline{V} \cdot e^{\lambda t}, \overline{V} = \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix}
+\end{equation*}
+
+\begin{align*}
+\overline{V} \cdot \lambda e^{\lambda t} &= \overline{A} \cdot \overline{V}\\
+\rightarrow \overline{A} \overline{V} &- \lambda \overline{V} = 0\\
+\overline{V} &= \overline{I} \overline{V}, I=\begin{bmatrix}
+	1 & 0\\
+	0 & 1
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	1 & 0\\
+	0 & 1
+\end{bmatrix} \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix}\\
+\overline{A} \cdot \overline{V} &- \lambda I \overline{V} = 0 \leftarrow \text{ (cannot subtract constant from matrix)}\\
+(\overline{A} &- \lambda I ) \cdot \overline{V} = 0\\
+| (\overline{A} &- \lambda I) | = 0 \leftarrow \text{ (infintely many solutions)}\\
+&\rightarrow \Bigm| \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix} - \begin{bmatrix}
+	\lambda & 0\\
+	0 & \lambda
+\end{bmatrix} \Bigm| = 0\\
+&\rightarrow \Bigm| \begin{bmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{21} & a_{22}-\lambda
+\end{bmatrix} \Bigm| = 0\\
+&\rightarrow \Bigm| \begin{bmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{12} & a_{22}-\lambda
+\end{bmatrix} \Bigm| = 0\\
+&(a_{11}-\lambda)(a_{22}-\lambda)-a_{12}a_{21}=0\\
+&\lambda^2-\lambda(a_{11} + a_{22})+a_{11}a_{12}-a_{12}a_{22}=0
+\end{align*}
+
+(2) Two distinct roots of characteristic equations $\lambda=\lambda_1$, $\lambda=\lambda_2$, $\lambda_1 \neq \lambda_2$ substitute $\lambda$ in $(\overline{A} \rightarrow I)\overline{V}=0$
+\begin{align*}
+\Bigm( \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix} - \begin{bmatrix}
+	\lambda_1 & 0\\
+	0 & \lambda_2
+\end{bmatrix} \Bigm) \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = 0\\
+\begin{bmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{21} & a_{22}-\lambda
+\end{bmatrix} \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = 0\\
+\begin{cases}
+	(a_{11}-\lambda)+a_{12}b=0\\
+	a_{21}a+(a_{22}-\lambda_1)b=0
+\end{cases}
+\end{align*}
+
+\textbf{Problem 13}
+\begin{align*}
+\begin{cases}
+	x' = 2x+4y+3 \cdot e^t\\
+	y' = 5x-y-t^2
+\end{cases}\\
+\overline{X} = \begin{bmatrix}
+	x\\
+	y
+\end{bmatrix}, \overline{F} \begin{bmatrix}
+	3e^{t}\\
+	-t
+\end{bmatrix}\\
+\begin{bmatrix}
+	x'\\
+	y'
+\end{bmatrix} = \begin{bmatrix}
+	2 & 4\\
+	5 & -1
+\end{bmatrix} \begin{bmatrix}
+	x\\
+	y
+\end{bmatrix} + \begin{bmatrix}
+	3e^t\\
+	-t^2
+\end{bmatrix}\\
+\overline{X'} = \begin{bmatrix}
+	2 & 4\\
+	5 & -1
+\end{bmatrix} \cdot \overline{X} + \overline{F}\\
+\begin{bmatrix}
+	x'\\
+	y'
+\end{bmatrix} = \begin{bmatrix}
+	2x+4y\\
+	5x-y
+\end{bmatrix} + \begin{bmatrix}
+	3e^t\\
+	-t^2
+\end{bmatrix}\\
+= \begin{bmatrix}
+	2x+4y+3e^t\\
+	5x-y-t^2
+\end{bmatrix}\\
+\begin{cases}
+	x'=2x+4y+3e^t\\
+	y'=5x-y-t^2
+\end{cases}
+\end{align*}
+
+\section{Method of Eigenvalues}
+\begin{align*}
+\overline{X'} = \overline{A} \cdot \overline{X} &\leftarrow \overline{X} = \overline{V}e^{\lambda t}, \overline{V} = \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} \leftarrow \text{constant vector}\\
+\overline{V}(e^{\lambda t})' &= \overline{A} \cdot \overline{V}e^{\lambda t}\\
+\lambda \overline{V} \cancel{e^{\lambda t}} &= \overline{A} \cdot \overline{V} \cancel{e^{\lambda t}}\\
+\rightarrow \overline{A} \overline{V} &- \lambda \overline{V} = 0\\
+\rightarrow \overline{A} \overline{V} &- \lambda \overline{I} \overline{V} = 0
+\end{align*}
+\begin{align*}
+\overline{I} = \begin{bmatrix}
+	1 & 0\\
+	0 & 1
+\end{bmatrix}, \begin{bmatrix}
+	1 & 0\\
+	0 & 1
+\end{bmatrix} \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix}\\
+\rightarrow (\overline{A} - \lambda \overline{I}) -\overline{V} = \overline{0}\\
+\overline{0} = \begin{bmatrix}
+	0\\
+	0
+\end{bmatrix}, A= \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix}\\
+\rightarrow \Bigm( \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix} -\lambda \begin{bmatrix}
+	1 & 0\\
+	0 & 1
+\end{bmatrix} \Bigm) \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = 0\\
+\begin{bmatrix}
+	a_{11} - \lambda & a_{12}\\
+	a_{21} & a_{22} - \lambda
+\end{bmatrix} \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = \begin{bmatrix}
+	0\\
+	0
+\end{bmatrix}\\
+\rightarrow \begin{bmatrix}
+	(a_{11}-\lambda)a+a_{12}b\\
+	a_{21}a+(a_{22}-\lambda)b
+\end{bmatrix} = \begin{bmatrix}
+	0\\
+	0
+\end{bmatrix}\\
+\begin{cases}
+	(a_{11}-\lambda)a+a_{12}b=0\\
+	a_{21}a+(a_{22}-\lambda)b=0
+\end{cases} (a,b)?\\
+\begin{vmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{21} & a_{22}-\lambda
+\end{vmatrix} = 0\\
+(a_{11} - \lambda)(a_{22} - \lambda) - a_{21}a_{12} = 0\\
+\lambda^2 - (a_{11}+a_{22})\lambda + a_{11}a_{22} - a_{21}a_{12} = 0
+\end{align*}
+\begin{align*}
+	(1) & \lambda=\lambda_1, \lambda=\lambda_2, \lambda_1 \neq \lambda_2\\
+	(2) & \lambda_1 = \lambda_2\\
+	(3) & \lambda_1, \lambda_2 - \text{ complex}
+\end{align*}
+\begin{equation*}
+\overline{X_1} = \overline{V_1} e^{\lambda t}
+\end{equation*}
+\textbf{Problem 3}
+\begin{equation*}
+\begin{cases}
+	x_1'=3x_1+4x_2 & x_1(0)=1\\
+	x_2'=3x_1+2x_2 & x_2(0)=1
+\end{cases}
+\end{equation*}
+\begin{align*}
+x_1(t), x_2(t) ?\\
+\overline{X} = \begin{bmatrix}
+	x_1\\
+	x_2
+\end{bmatrix}, A = \begin{bmatrix}
+	3 & 4\\
+	3 & 2
+\end{bmatrix}\\
+\rightarrow \overline{X'} = \begin{bmatrix}
+	3 & 4\\
+	3 & 2
+\end{bmatrix} \overline{X}
+\end{align*}
+substitute $\overline{X} = \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} e^{\lambda t}$ after determining $\lambda$
+\begin{align*}
+\begin{vmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{21} & a_{22}-\lambda
+\end{vmatrix} &= 0\\
+\begin{vmatrix}
+	3-\lambda & 4\\
+	3 & 2-\lambda
+\end{vmatrix} &= 0\\
+(3-\lambda)(2-\lambda)-3-4 &= 0\\
+\lambda^2-5\lambda-6 &= 0\\
+\lambda = \lambda_1 = 6, ~~~~~ \lambda &= \lambda_2 = -1\\
+\\
+\begin{bmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{21} & a_{22}-\lambda
+\end{bmatrix} \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} &= 0\\
+\begin{cases}
+	(a_{11}-\lambda)a+a_{12}b=0\\
+	a_{21}a+(a_{22}-\lambda)b=0
+\end{cases}&\\
+\downarrow ~~~~~~~~~~ &\\
+\begin{cases}
+	(3-\lambda)a+4b=0\\
+	3a+(2-\lambda)b=0
+\end{cases}& \\
+\end{align*}
+(2) $\lambda = \lambda_1=b$\\
+\begin{align*}
+\begin{cases}
+	(3-6)a+4b=0\\
+	3a+(2-6)b=0
+\end{cases}& \\
+\begin{cases}
+	-3a+4b=0\\
+	3a-4b=0
+\end{cases}& \\
+\end{align*}
+Test for valid equations, expect unlimited solutions\\
+Chose any value for $a$ and $b$\\
+\begin{align*}
+a= 4, b &= 3 \\
+\rightarrow \begin{bmatrix}
+	4\\
+	3
+\end{bmatrix} \rightarrow \overline{X_1} &= \begin{bmatrix}
+	4\\
+	3
+\end{bmatrix} e^{\lambda_1 t}\\
+&= \begin{bmatrix}
+	4\\
+	3
+\end{bmatrix}
+	e^{6t}
+\end{align*}
+(3) $\lambda =\lambda_2 =-1$\\
+\begin{align*}
+&\begin{cases}
+	(3-(-1))a+4b=0\\
+	3a+(3-(1))b=0
+\end{cases}\\
+&\begin{cases}
+	4a+4b=0\\
+	3a+3b=0
+\end{cases}\\
+&\text{Test for valid equation}
+\end{align*}
+choose values for $a$ and $b$\\
+\begin{align*}
+a &= -1, a=1\\
+\overline{X_2} &= \begin{bmatrix}
+	1\\
+	-1
+\end{bmatrix} e^{\lambda_2t} = \begin{bmatrix}
+	1\\
+	-1
+\end{bmatrix} e^{-t}\\
+\begin{bmatrix}
+	x_1\\
+	x_2
+\end{bmatrix} &= C_1 \begin{bmatrix}
+	4\\
+	3
+\end{bmatrix} e^{6t} + C_2 \begin{bmatrix}
+	1\\
+	-1
+\end{bmatrix} e^{-t}\\
+&= \begin{bmatrix}
+	4C_1e^{6t}\\
+	3C_1e^{6t}
+\end{bmatrix} + \begin{bmatrix}
+	C_2e^{-t}\\
+	-C_2e^{-t}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	4C_1e^{6t}+C_2e^{-t}\\
+	3C_1e^{6t}-C_2e^{-t}
+\end{bmatrix}\\
+& \begin{cases}
+	x_1 = 4C_1e^{6t}+C_2e^{-t}\\
+	x_2 = 3C_1e^{6t}-C_2e^{-t}
+\end{cases}
+\end{align*}
+Using Initial Conditions
+\begin{align*}
+\begin{matrix}
+	x_1(0)=4C_1e^0+C_2e^0=1\\
+	x_2(0)=3C_1e^0-C_2e^0=1
+\end{matrix} \Bigm\} \\
+\\
+\begin{cases}
+	4C_1+C_2=1\\
+	3C_1-C_2=1
+\end{cases} \oplus \\
+\\
+7C_1+0 &= 2\\
+C_1 &= \frac{2}{7}\\
+\\
+4 \Bigm( \frac{2}{7} \Bigm) + C_2 &= 1\\
+C_2 &= 1-4 \cdot \frac{2}{7}\\
+&= -\frac{1}{7}\\
+\\
+x_1 &= \frac{8}{7}e^{6t}+ \Bigm( -\frac{1}{7} \Bigm) e^{-t}\\
+x_2 &= \frac{6}{7}e^{6t}+ \frac{1}{7}e^{-t}
+\end{align*}
+\section{Eigenvalue Method to $\overline{X'}$}
+\begin{align*}
+\overline{X'} &= \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix} \cdot \overline{X}\\
+\overline{X'} &= \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} e^{\lambda t}
+\end{align*}
+Characteristic Equation
+\begin{align*}
+\begin{vmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{21} & a_{22}-\lambda
+\end{vmatrix} =0\\
+\rightarrow \lambda=\lambda_1, \lambda=\lambda_2
+\end{align*}
+System of Equations for ``$a$'' and ``$b$''
+\begin{align*}
+&\begin{bmatrix}
+	a_{11}-\lambda & a_{12}\\
+	a_{21} & a_{22}-\lambda
+\end{bmatrix} \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = 0\\
+&\rightarrow \begin{cases}
+	(a_{11}-\lambda)a+a_{21}b=0\\
+	a_{21}a+(a_{22}-\lambda)b=0
+\end{cases}\\
+&\rightarrow \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix}
+\end{align*}
+2. $\lambda$ - complex number\\
+$\lambda_1=\alpha+i\beta, \lambda_2=\alpha-i\beta$
+\begin{align*}
+\begin{cases}
+	(a_{11}-\lambda)a+a_{12}b=0\\
+	a_{21} \cdot a+(a_{22}-\lambda_1)b=0
+\end{cases}\\
+\begin{cases}
+	(a_{11}-\alpha-i\beta)a+a_{12}b=0\\
+	a_{21}a+(a_{22}-\alpha-i\beta)b=0
+\end{cases}\\
+\rightarrow \begin{pmatrix}
+	a=a_1+ia_2\\
+	b=b_1+ib_2
+\end{pmatrix}\\
+\overline{X} = \begin{bmatrix}
+	a_1+ia_2\\
+	b_1+ib_2
+\end{bmatrix} e^{(\alpha+i\beta)}t
+\end{align*}
+Euler's Formula
+\begin{align*}
+\rightarrow & e^{(\alpha+i\beta)}\\
+&= e^{\alpha t}(\cos \beta t \pm i\sin \beta t)\\
+\overline{X} &= \begin{bmatrix}
+	a_1 + ia_2\\
+	b_1 + ib_2
+\end{bmatrix} e^{\alpha t}(\cos \beta t \pm i \sin \beta t)\\
+&= \begin{bmatrix}
+	(a_1+ia_2)(\cos \beta t + i \sin \beta t)\\
+	(b_1+ib_2)(\cos \beta t + i \sin \beta t)
+\end{bmatrix} e^{\alpha t}\\
+&= \begin{bmatrix}
+	a_1\cos \beta t + i(a_1\sin \beta t + a_2\cos \beta t) - a_2 \sin \beta t\\
+	b_1\cos \beta t + i(b_1\sin \beta t + b_2\cos \beta t) + b_2 \sin \beta t
+\end{bmatrix} e^{\alpha t}\\
+&= \begin{bmatrix}
+	e^{\alpha t} (a_1 \cos \beta t -a_2\sin \beta t)\\
+	e^{\alpha t} (b_1 \cos \beta t -b_2\sin \beta t)
+\end{bmatrix} +i \begin{bmatrix}
+	e^{\alpha t} (a_1\sin \beta t + a_2 \cos \beta t)\\
+	e^{\alpha t} (b_1\sin \beta t + b_2 \cos \beta t)
+\end{bmatrix}\\
+\overline{X} &= \overline{X_1} + i\overline{X_2}\\
+\overline{X_1} &= \text{Re}[\overline{X}], \overline{X_2} = \text{Im}[\overline{X}]\\
+& \text{- Particular Solutions}
+\end{align*}
+\textbf{Example 1}\\
+\begin{align*}
+\frac{dx_1}{dt} &= 4x_1-3x_2\\
+\frac{dx_2}{dt} &= 3x_1+4x_2\\
+\rightarrow A &= \begin{bmatrix}
+	4 & -3\\
+	3 & 4
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	a_{11} & a_{12}\\
+	a_{21} & a_{22}
+\end{bmatrix}
+\end{align*}
+Characteristic Equation
+\begin{align*}
+\begin{vmatrix}
+	4-\lambda & -3\\
+	3 & 4-\lambda
+\end{vmatrix} = 0\\
+(4-\lambda)(4-\lambda)-3\cdot(-3) &= 0\\
+\rightarrow (\lambda-4)^2+9 &= 0\\
+(\lambda-4)^2 &= -9\\
+\lambda-4 &= \pm 3i\\
+\lambda_1=4+3i, \lambda_2 &= 4-3i
+\end{align*}
+\begin{align*}
+\text{for } \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} &: \begin{bmatrix}
+	4-\lambda_2 & -3\\
+	3 & 4-\lambda_2
+\end{bmatrix} \begin{bmatrix}
+	a\\
+	b
+\end{bmatrix} = 0\\
+&\begin{cases}
+	4-(4(4-3i))\cdot a+(-3)b=0\\
+	3a+(4(4-3i))b=0
+\end{cases}\\
+&\begin{cases}
+	3ia-3b=0\\
+	3a+3ib=0
+\end{cases}\\
+&\begin{cases}
+	ia-b=0\\
+	a+ib=0
+\end{cases}\\
+&\begin{matrix}
+	\rightarrow ia-b=0\\
+	ia-b=0
+\end{matrix}\\
+&a=i, b=-1
+\end{align*}
+\begin{align*}
+x &= \begin{bmatrix}
+	i\\
+	-1
+\end{bmatrix} e^{(4-3i)t}\\
+&= \begin{bmatrix}
+	i\\
+	-1
+\end{bmatrix} e^{4y}(\cos 3t-i\sin 3t)\\
+&= \begin{bmatrix}
+	i(\cos3t-i\sin3t)e^{4t}\\
+	-1(\cos3t-i\sin3t)e^{4t}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	(i\cos3t+\sin3t)e^{4t}\\
+	(-\cos3t+i\sin3t)e^{4t}
+\end{bmatrix}\\
+\overline{X_1} &= \text{Re}[\overline{X}]\\
+&= \begin{bmatrix}
+	\sin3t \cdot e^{4t}\\
+	-\cos 3t \cdot e^{4t}
+\end{bmatrix}\\
+\overline{X_2} &= \text{Im}[\overline{X}]\\
+&= \cancel{i}\begin{bmatrix}
+	\cos3t \cdot e^{4t}\\
+	\sin3t \cdot e^{4t}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	\cos3t \cdot e^{4t}\\
+	\sin3t \cdot e^{4t}
+\end{bmatrix}\\
+\overline{X} &= C_1\overline{X_1}+C_2\overline{X_2}\\
+&= C_1\begin{bmatrix}
+	\sin3te^{4t}\\
+	-\cos3te^{4t}
+\end{bmatrix} + C_2 \begin{bmatrix}
+	\cos3te^{4t}\\
+	\sin3te^{4t}
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	x_1\\
+	x_2
+\end{bmatrix}\\
+x_1 &= C_1\sin3te^{4t}+C_2\cos3te^{4t}\\
+x_2 &= -C_1\cos3te^{4t}+C_2\sin3te^{4t}
+\end{align*}
 \end{document}
