@@ -68,12 +68,14 @@ $$
 ## Resistors in Series
 
 Given that Resistors $R_1$ and $R_2$ are in series.
+
 $$
 R_{Total} = R_1 + R_2
 $$
 
 ## Resistors in Parallel
 Given that Resistors $R_3$ and $R_4$ are in parallel.
+
 $$
 R_{Total} = \frac{R_3 R_4}{R_3 + R_4}
 $$
@@ -81,12 +83,14 @@ $$
 # Capacitor Combinations
 ## Capacitors in Series
 Given that Capacitors $C_1$ and $C_2$ are in series.
+
 $$
 C_{Total} = \frac{C_1 C_2}{C_1 + C_2}
 $$
 
 ## Capacitors in Parallel
 Given that Capacitors $C_3$ and $C_4$ are in parallel.
+
 $$
 C_{Total} = C_3 + C_4
 $$
